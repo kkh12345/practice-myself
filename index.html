@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,28 +29,26 @@
       <div class="main-center">
         <!-- 도시 선택 영역 -->
         <div class="main-city-select-area">
-          <select name="" id="" class="si">
+          <select name="" id="bigCity" class="si">
             <option value="" disabled selected>시/도</option>
-            <option value="">1</option>
-            <option value="">1</option>
+            <option
+              th:each="list : ${big_city_list}"
+              th:value="${list.first_code}"
+            >
+              [[${list.name}]]
+            </option>
           </select>
-          <select name="" id="" class="gun">
+          <select name="" id="smallCity" class="gun">
             <option value="" disabled selected>군/구</option>
-            <option value="">1</option>
-            <option value="">1</option>
           </select>
           <select name="" id="" class="dong">
             <option value="" disabled selected>동</option>
-            <option value="">1</option>
-            <option value="">1</option>
           </select>
         </div>
         <!-- 날씨 선택 영역 -->
         <div class="main-weather-select-area">
           <select name="" id="" class="dong">
             <option value="" disabled selected>날짜</option>
-            <option value="">1</option>
-            <option value="">1</option>
           </select>
           <button type="button">조회</button>
         </div>
@@ -75,5 +73,6 @@
         </div>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>

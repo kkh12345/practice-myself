@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+}
+div {
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+h1 {
+  margin: 0;
+}
+
+aside {
+  width: 300px;
+  min-height: 100vh;
+  background-color: pink;
+  position: fixed;
+  right: -300px;
+  z-index: 1;
+  top: 0;
+}
+.aside-closed {
+  width: 25px;
+  height: 25px;
+  float: right;
+  position: relative;
+  margin: 10px;
+  z-index: 1;
+  background-color: black;
+}
+.aside-line1,
+.aside-line2 {
+  width: 100%;
+  padding: 2px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+}
+.aside-line1 {
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+}
+.aside-line2 {
+  transform: translateY(-50%) rotate(135deg);
+  top: 50%;
+}
+.aside-menu {
+  padding: 0;
+  text-align: center;
+}
+.aside-menu li {
+  padding: 1rem;
+}
+
+.nav-bg {
+  height: 60px;
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #ccc;
+}
+.nav-container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-menu {
+  width: 35px;
+  height: 30px;
+
+  border: 1px solid gray;
+  position: relative;
+}
+.menu-line1,
+.menu-line2,
+.menu-line3 {
+  width: 90%;
+  height: 5px;
+  background-color: gray;
+  border-radius: 5px;
+  position: absolute;
+}
+.menu-line1 {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menu-line2 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu-line3 {
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main {
+  background-color: beige;
+}
+.main-container {
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 100px 0;
+}
+.main-content {
+  width: 50%;
+  margin: 0 auto;
+}
+.main-title,
+.main-description {
+  margin: 2rem 0;
+}
+.today-area {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: lightsalmon;
+  padding: 20px;
+}
+.today-title {
+  margin: 0;
+}
+
+.today-apart-box {
+  width: 300px;
+  margin: 0 auto;
+  height: 1.5rem;
+  border: 1px solid black;
+  margin-top: 20px;
+}

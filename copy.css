@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  background-color: #eee;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+div {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+
+/* ----------------------------------- */
+.nav-bar {
+  background-color: #d1d8e0;
+}
+.nav-center {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+.nav-list h1 {
+  font-size: 1.5rem;
+}
+.nav-list li {
+  margin-right: 3rem;
+}
+.nav-list a {
+  color: black;
+}
+
+.nav-search {
+  padding: 2px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-search input {
+  width: 9rem;
+  padding: 0 1rem;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+.nav-search i {
+  padding: 0 0.5rem;
+  color: #2f2179;
+  border-left: 1px solid #ccc;
+}
+/* ----------------------------------- */
+.main-area {
+  background-color: #3f4f68;
+  text-align: center;
+  color: white;
+}
+.main-center {
+  width: 50%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* ----------------------------------- */
+
+.article-center {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.article-form-area {
+  float: left;
+  margin-right: 30px;
+}
+.article-title {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
+.article-select-area {
+  margin: 1rem 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.block {
+  visibility: visible;
+  opacity: 1;
+}
+.article-select-area select {
+  width: 100px;
+  border: 1px solid #3f4f68;
+  padding: 5px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.article-area button {
+  padding: 5px 10px;
+
+  font-size: 1.1rem;
+  vertical-align: top;
+  border: 1px solid #3f4f68;
+  background-color: #d1d8e0;
+  border-radius: 10px;
+}
+.article-table-area {
+  overflow: auto;
+  float: right;
+  margin-top: 6rem;
+}
+.article-table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background-color: #39ab87;
+}
+th a {
+  color: black;
+}
+th,
+td {
+  border: 1px solid #3f4f68;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=index.css.map */

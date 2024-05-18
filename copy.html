@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이름</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./copy.css" />
+  </head>
+  <body>
+    <!-- 네비게이션 바 -->
+    <div class="nav-bar">
+      <div class="nav-center">
+        <ul class="nav-list">
+          <li><h1>LOGO</h1></li>
+          <li><a href="#">랭킹</a></li>
+          <li><a href="#">차트</a></li>
+          <li><a href="#">기타</a></li>
+        </ul>
+        <div class="nav-search">
+          <input type="text" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+    <!-- 메인 바 -->
+    <div class="main-area">
+      <div class="main-center">
+        <h1>메인제목</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sit
+          perspiciatis voluptatem minima molestiae eum hic nihil amet? Quae odio
+          sapiente temporibus eligendi accusantium itaque dolor aliquid iure
+          placeat voluptas?
+        </p>
+      </div>
+    </div>
+
+    <!-- article 영역 -->
+    <div class="article-area">
+      <div class="article-center">
+        <!-- 도시 선택 영역 -->
+        <div class="article-form-area">
+          <h1 class="article-title">오늘의 떡락 아파트</h1>
+          <div class="article-button-area">
+            <button type="button" class="option">
+              옵션 선택 <i class="fa-solid fa-caret-down"></i>
+            </button>
+            <script>
+              document
+                .querySelector('.option')
+                .addEventListener('click', function () {
+                  document
+                    .querySelector('.article-select-area')
+                    .classList.toggle('block');
+                });
+            </script>
+            <button type="button">조회</button>
+          </div>
+          <form class="article-select-area">
+            <select name="" id="largeCity" class="si">
+              <option value="" disabled selected>시/도</option>
+              <option th:each="l : ${list}" th:value="${l.code}">
+                [[${l.name}]]
+              </option>
+            </select>
+            <select name="" id="middleCity" class="gun">
+              <option value="" disabled selected>군/구</option>
+            </select>
+            <select name="" id="" class="dong">
+              <option value="" disabled selected>동</option>
+            </select>
+            <select name="" id="" class="date">
+              <option value="" disabled selected>날짜</option>
+            </select>
+          </form>
+        </div>
+
+        <!-- 메인 내용 -->
+        <div class="article-table-area">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>순위</th>
+                <th>지역</th>
+                <th>이름</th>
+                <th>가격</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="list, count : ${maxList}">
+                <td th:text="${count.index + 1}"></td>
+                <td>[[${list.small_city_name}]]</td>
+                <td>[[${list.apt_name}]]</td>
+                <td>[[${list.amount}]]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="clear: both"></div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/static/main.js"></script>
+  </body>
+</html>

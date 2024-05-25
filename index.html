@@ -14,14 +14,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="./copy.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- 네비게이션 바 -->
     <div class="nav-bar">
       <div class="nav-center">
         <ul class="nav-list">
-          <li><h1>LOGO</h1></li>
+          <li>
+            <h1><a href="/">LOGO</a></h1>
+          </li>
           <li><a href="#">랭킹</a></li>
           <li><a href="#">차트</a></li>
           <li><a href="#">기타</a></li>
@@ -100,8 +102,12 @@
               <tr th:each="list, count : ${maxList}">
                 <td th:text="${count.index + 1}"></td>
                 <td>[[${list.small_city_name}]]</td>
-                <td>[[${list.apt_name}]]</td>
-                <td>[[${list.amount}]]</td>
+                <td>
+                  <a th:href="@{/apt/detail(apt_name=${list.apt_name})}"
+                    >[[${list.apt_name}]]</a
+                  >
+                </td>
+                <td>[[${list.amount}]]만원</td>
               </tr>
             </tbody>
           </table>
@@ -115,6 +121,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="/static/main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>

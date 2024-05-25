@@ -27,7 +27,6 @@ li {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +39,7 @@ li {
   font-size: 1.5rem;
 }
 .nav-list li {
-  margin-right: 3rem;
+  margin-right: 2rem;
 }
 .nav-list a {
   color: black;
@@ -55,7 +54,7 @@ li {
   justify-content: space-between;
 }
 .nav-search input {
-  width: 9rem;
+  width: 130px;
   padding: 0 1rem;
   outline: none;
   border: none;
@@ -77,8 +76,8 @@ li {
   width: 50%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding: 10rem 0;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,8 +94,8 @@ li {
   margin-right: 30px;
 }
 .article-title {
-  margin-top: 6rem;
-  margin-bottom: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
 }
 
 .article-select-area {
@@ -112,6 +111,7 @@ li {
 .article-select-area select {
   width: 100px;
   border: 1px solid #3f4f68;
+
   padding: 5px;
   font-size: 1.1rem;
   text-align: center;
@@ -129,7 +129,7 @@ li {
 .article-table-area {
   overflow: auto;
   float: right;
-  margin-top: 6rem;
+  margin-top: 5rem;
 }
 .article-table {
   width: 100%;
@@ -140,7 +140,7 @@ li {
 }
 
 th {
-  background-color: #39ab87;
+  background-color: #d1d8e0;
 }
 th a {
   color: black;

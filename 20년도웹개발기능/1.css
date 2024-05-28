@@ -61,6 +61,9 @@ a {
 .products-card {
   max-width: 25%;
 }
+.products-card:hover {
+  transform: scale(1.1);
+}
 
 .card-container {
   background-color: white;
@@ -101,11 +104,23 @@ a {
 
 .cart-drag {
   background-color: black;
-  color: white;
-  height: 500px;
-  line-height: 500px;
-  letter-spacing: 3px;
+  min-height: 400px;
+  padding: 20px;
   text-align: center;
-  font-size: 20px;
-  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-drag span {
+  color: white;
+}
+.cart-drag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-drag-container > .card-container {
+  border-radius: 5px;
+  max-width: 50%;
 }

@@ -4,123 +4,91 @@ body {
 div {
   box-sizing: border-box;
 }
-a {
-  text-decoration: none;
-}
 .nav-bar {
-  background-color: rgb(30, 29, 29);
-}
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 90%;
-  padding: 20px 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-}
-.nav-title {
-  margin: 0;
-  font-weight: 200;
+  background-color: black;
   color: white;
 }
-.nav-menu {
-  padding: 0;
+.nav-bar a {
+  color: gray;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.nav-flex {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.nav-logo {
   margin: 0;
+  font-weight: 400;
 }
 .nav-list {
   display: inline-block;
-  margin-right: 10px;
 }
-.nav-list > .home {
+.nav-list:first-child a {
   color: white;
 }
-.nav-list a {
-  color: gray;
-}
-.main {
+.main-area {
   background-color: #eee;
 }
+
 .main-container {
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  width: 90%;
 }
-
+.search-area {
+  padding: 20px 0;
+}
 .search-input {
-  margin: 30px 0;
-  font-size: 16px;
+  font-size: 1.2rem;
   padding: 5px;
 }
 .products-area {
   display: flex;
-  justify-content: flex-start;
   gap: 20px;
 }
 .products-card {
-  max-width: 25%;
-}
-.products-card:hover {
-  transform: scale(1.1);
-}
-
-.card-container {
   background-color: white;
   padding: 20px;
+  max-width: 25%;
 }
-.card-container img {
+.card-img {
   width: 100%;
 }
-
-.card-title {
-  margin-top: 20px;
+.products-name {
   margin-bottom: 10px;
 }
-.card-brand {
-  color: gray;
+.products-brand {
   margin: 0;
+  color: gray;
 }
-.card-price {
-  margin: 20px 0;
-}
-.card-btn {
-  color: white;
-  background-color: black;
+.black-btn {
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-}
-
-.cart-title {
-  padding: 0 20px;
-}
-.cart-area {
-  background-color: #ccc;
-  padding: 30px;
-  margin-top: 30px;
-}
-
-.cart-drag {
   background-color: black;
-  min-height: 400px;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cart-drag span {
   color: white;
 }
-.cart-drag-container {
+.cart-gray {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ccc;
+}
+.cart-title {
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.cart-black {
+  padding: 30px;
+  min-height: 400px;
+  background-color: black;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.cart-drag-container > .card-container {
-  border-radius: 5px;
-  max-width: 50%;
 }

@@ -1,126 +1,86 @@
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<전역변수선언영역>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
 let productsArr = [];
-let inputTag = document.querySelectorAll('.search-input')[0];
-let inputValue;
-let productsArea = document.querySelector('.products-area');
-let currentProducts = [];
-firstLoad();
 
-inputTag.addEventListener('input', function () {
-  includeArr = [];
-  inputValue = inputTag.value;
-  resetProducts();
+fetch('./store.json')
+  .then((res) => res.json())
+  .then(function (data) {
+    productsArr = data.products;
+    let productsArea = [];
+    let cart = [];
+    //~~~~~~~~~
+    //초기화면
+    //~~~~~~~~~
+
+    //상품데이터받아와서
+    productsArr.forEach((data, i) => {
+      let 템플릿 = `<div class="products-card" data-id="{productsArr[${i}].id}">
+      <img src="./pr${i + 1}.JPG" alt="" class="card-img" />
+      <h3 class="products-name">${productsArr[i].title}</h3>
+      <p class="products-brand">${productsArr[i].brand}</p>
+      <p class="products-price">가격 : ${productsArr[i].price}</p>
+      <button class="black-btn">담기</button>
+    </div>`;
+      //상품영역(products-area) 안에 넣어주셈
+      document
+        .querySelector('.products-area')
+        .insertAdjacentHTML('beforeend', 템플릿);
+      //상품영역에 들어있는상품데이터
+      productsArea.push(productsArr[i]);
+    });
+  })
+
+  .catch(function (error) {
+    console.log('실패함');
+  });
+
+//~~~~~~~~~~
+//검색기능
+//~~~~~~~~~~
+
+//input이벤트가 일어날 때
+document.querySelector('.search-input').addEventListener('input', function () {
+  //유저가 입력한 값을 받아옴
+  let inputValue = document.querySelector('.search-input').value;
+  //상품영역에 들어있는 상품데이터 비움
+  productsArea = [];
+  document.querySelector('.products-area').innerHTML = '';
+  //유저가 검색어입력안함
   if (inputValue === '') {
-    firstLoad();
-  }
-  //빈배열아니고, 일치하는 제목 브랜드명 없을 때
-  //예) 식ㅅㅍ
-  //  그냥 초기상태로.. 안해도 되는데 해보자
-  // else {
-  //   let includes = false;
-  //   for (let i = 0; i < productsArr.length; i++) {
-  //     if (
-  //       productsArr[i].title.includes(inputValue) ||
-  //       productsArr[i].brand.includes(inputValue)
-  //     ) {
-  //       includes = true;
-  //     }
-  //   }
-  //   if (includes === false) {
-  //     firstLoad();
-  //   }
-  // }
-
-  //(유효성검사완료)
-
-  for (let i = 0; i < productsArr.length; i++) {
-    if (
-      productsArr[i].title.includes(inputValue) ||
-      productsArr[i].brand.includes(inputValue)
-    ) {
-      includeArr.push(productsArr[i]);
+    productsArr.forEach((data, i) => {
       addCard(i);
-    }
-    includeArr.forEach(function (data, i) {
-      highlight('title', i);
-      highlight('brand', i);
+      productsArea.push(productsArr[i]);
+      //상품영역 안에 들어있는 상품데이터
     });
   }
-  currentProducts = includeArr;
-});
-
-document.querySelector('.main').addEventListener('dragstart', function (e) {
-  const copyHtml = e.target.innerHTML;
-  e.dataTransfer.setData('card', copyHtml);
-});
-
-document.querySelector('.main').addEventListener('dragover', function (e) {
-  e.preventDefault();
-});
-document.querySelector('.main').addEventListener('drop', function (e) {
-  if (e.target === document.querySelector('.cart-drag')) {
-    e.preventDefault();
-    const card = e.dataTransfer.getData('card');
-    console.log(card);
-    // document.querySelectorAll('.products-card')[0].innerHTML = '';
-    document.querySelector('.cart-drag-container').innerHTML = '';
-    document
-      .querySelector('.cart-drag-container')
-      .insertAdjacentHTML('beforeend', card);
-  }
-  // else {
-  //   console.log('false');
-  // }
-});
-
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<함수선언영역>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
-
-//(처음제품로드화면)
-async function firstLoad() {
-  await fetch('./store.json')
-    .then((res) => res.json())
-    .then(function (data) {
-      productsArr = data.products;
-      currentProducts = productsArr;
-      resetProducts();
-      productsArr.forEach(function (data, i) {
+  //유저가 검색어입력함
+  else {
+    productsArr.forEach((data, i) => {
+      //상품의 제목,브랜드가 검색어를 포함하면
+      if (
+        productsArr[i].title.includes(inputValue) ||
+        productsArr[i].brand.includes(inputValue)
+      ) {
+        //그 상품만 나오게 html변경
         addCard(i);
-      });
-    })
-    .catch(function (error) {
-      console.log('실패함');
+        //상품영역 안에 들어있는 상품들 업데이트
+        productsArea.push(productsArr[i]);
+      }
     });
-}
+  }
+});
+//~~~~~~~~
+//함수선언
+//~~~~~~~~
 
-//(하이라이트 주기)
-function highlight(content, index) {
-  inputValue = inputTag.value;
-  let str = document.querySelectorAll(`.card-${content}`)[index].innerText;
-  const strFind = inputValue;
-  const regex = new RegExp(strFind, 'g');
-  const replaceStr = str.replace(
-    regex,
-    `<span style="background-color:yellow">${strFind}</span>`
-  );
-  // console.log(replaceStr);
-  document.querySelectorAll(`.card-${content}`)[index].innerHTML = replaceStr;
-}
-
-//(리셋하면 처음제품로드화면으로)
-function resetProducts() {
-  productsArea.innerHTML = '';
-}
-
-//(카드 추가)
+//- 상품영역에 카드 추가 -
 function addCard(index) {
-  let 템플릿 = `<div class="products-card" draggable="true">
-        <div class="card-container">
-          <img src="./pr${index + 1}.JPG" alt="" width="100%" />
-          <h2 class="card-title">${productsArr[index].title}</h2>
-          <p class="card-brand">${productsArr[index].brand}</p>
-          <p class="card-price">가격 : ${productsArr[index].price}</p>
-          <button class="card-btn">담기</button>
-        </div>
-      </div>`;
-  productsArea.insertAdjacentHTML('beforeend', 템플릿);
+  let 템플릿 = `<div class="products-card" data-id="{productsArr[${index}].id}">
+                <img src="./pr${index + 1}.JPG" alt="" class="card-img" />
+                <h3 class="products-name">${productsArr[index].title}</h3>
+                <p class="products-brand">${productsArr[index].brand}</p>
+                <p class="products-price">가격 : ${productsArr[index].price}</p>
+                <button class="black-btn">담기</button>
+              </div>`;
+  document
+    .querySelector('.products-area')
+    .insertAdjacentHTML('beforeend', 템플릿);
 }

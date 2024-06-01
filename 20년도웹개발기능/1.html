@@ -7,30 +7,49 @@
     <link rel="stylesheet" href="./1.css" />
   </head>
   <body>
-    <div class="nav-bar">
-      <div class="nav-flex">
+    <div class="nav">
+      <div class="nav-container">
         <h1 class="nav-logo">집꾸미기</h1>
         <ul class="nav-menu">
-          <li class="nav-list"><a href="">Home</a></li>
-          <li class="nav-list"><a href="">스토어</a></li>
-          <li class="nav-list"><a href="">시공견적</a></li>
+          <li class="nav-list">
+            <a href="#"><b>Home</b></a>
+          </li>
+          <li class="nav-list"><a href="#">스토어</a></li>
+          <li class="nav-list"><a href="#">시공견적</a></li>
         </ul>
       </div>
     </div>
-    <div class="main-area">
+    <div class="main">
       <div class="main-container">
         <div class="search-area">
-          <input type="search" class="search-input" placeholder="검색어입력" />
+          <input
+            type="text"
+            class="search-input"
+            placeholder="검색어를 입력하세요"
+          />
         </div>
-        <div class="products-area"></div>
+        <div class="products-area">
+          <!-- <div class="card">
+            <img src="pr1.JPG" alt="" class="card-img" />
+            <h4 class="card-title">식기세척기</h4>
+            <p class="card-brand">세척나라</p>
+            <p class="card-price">가격 : 10000</p>
+            <button class="add-btn">담기</button>
+          </div> -->
+        </div>
         <div class="cart-gray">
           <h3 class="cart-title">장바구니</h3>
           <div class="cart-black">
-            <p class="cart-explain">여기로 드래그</p>
+            <p class="drag-here">여기로 드래그</p>
           </div>
         </div>
       </div>
     </div>
     <script src="./1.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

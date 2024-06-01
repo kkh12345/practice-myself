@@ -4,91 +4,95 @@ body {
 div {
   box-sizing: border-box;
 }
-.nav-bar {
-  background-color: black;
-  color: white;
+.nav {
+  background-color: #aaa;
 }
-.nav-bar a {
-  color: gray;
-  text-decoration: none;
-  margin: 0 10px;
-}
-.nav-flex {
-  width: 90%;
+.nav-container {
+  padding: 10px 20px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  padding: 10px 0;
 }
 .nav-logo {
   margin: 0;
-  font-weight: 400;
+  color: white;
+  font-weight: 500;
+}
+.nav-menu {
+  margin: 0;
 }
 .nav-list {
   display: inline-block;
+  margin-right: 20px;
 }
-.nav-list:first-child a {
+.nav-list a {
+  text-decoration: none;
   color: white;
 }
-.main-area {
+.nav-list:first-child a {
+  color: pink;
+}
+.main {
   background-color: #eee;
 }
-
 .main-container {
-  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 .search-area {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 .search-input {
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 5px;
 }
 .products-area {
+  padding: 20px 0;
   display: flex;
+  align-items: flex-start;
   gap: 20px;
 }
-.products-card {
-  background-color: white;
-  padding: 20px;
+.card {
   max-width: 25%;
+  padding: 10px 20px;
+  background-color: white;
 }
 .card-img {
   width: 100%;
 }
-.products-name {
-  margin-bottom: 10px;
+.card-title {
+  margin-bottom: 0;
 }
-.products-brand {
-  margin: 0;
+.card-brand {
+  margin-top: 10px;
   color: gray;
+  font-size: 0.9rem;
 }
-.black-btn {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: black;
+.add-btn {
+  padding: 5px 10px;
   color: white;
+  background-color: black;
+  border-radius: 5px;
 }
 .cart-gray {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 10px;
   background-color: #ccc;
+  padding: 20px;
 }
 .cart-title {
   margin: 0;
   margin-bottom: 10px;
-  text-align: center;
 }
 .cart-black {
-  padding: 30px;
   min-height: 400px;
+  padding: 50px;
   background-color: black;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.drag-here {
+  color: white;
 }

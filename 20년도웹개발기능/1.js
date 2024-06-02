@@ -44,18 +44,9 @@ document.querySelector('.search-input').addEventListener('input', function (e) {
   highlight('brand');
 });
 
-//드래그&드롭
-//productsArea의 상품을 드래그시작하여
-//(e.target.dataset.id)랑 같은
-//(productsArr for문돌려서 id찾기)찾아서 cart-black에 담음
-//cart-black 에 드롭 이벤트가 일어나면
-//그 상품을 cartArr에 담음
-
-//(cartArr을 만들어서 그 상품데이터를 담자)
-//카드안의 버튼 대신 수량표시해주는 input넣음
-
 productsArea.addEventListener('dragstart', (e) => {
   let setId = e.target.dataset.id;
+
   e.dataTransfer.setData('setID', setId);
 });
 cartBlack.addEventListener('dragover', (e) => {
@@ -63,32 +54,58 @@ cartBlack.addEventListener('dragover', (e) => {
 });
 cartBlack.addEventListener('drop', (e) => {
   let getId = e.dataTransfer.getData('setID');
-  nullHtml('.cart-black');
-  productsArr.forEach(function (a, i) {
-    if (a.id == getId) {
-      cartArr.push(a);
-      addCartAreaCard();
-    }
-  });
+
+  if (cartArr.length === 0) {
+    console.log('비었음');
+
+    productsArr.forEach((a, i) => {
+      if (getId == a.id) {
+        cartArr.push(a);
+      }
+    });
+    console.log(cartArr);
+    nullHtml('.cart-black');
+    cartArr.forEach((b, i) => {
+      let 템플릿 = ` <div class="card" data-id="${b.id}" draggable="true">
+  <img src=${b.photo} alt="" class="card-img" />
+  <h4 class="card-title">${b.title}</h4>
+  <p class="card-brand">${b.brand}</p>
+  <p class="card-price">가격 : ${b.price}</p>
+  <input type="number", style="width : 100%" value=1 class="count">
+</div>`;
+      cartBlack.insertAdjacentHTML('beforeend', 템플릿);
+    });
+  } else {
+    console.log('안비었음');
+    //중복검사
+    cartArr.forEach((a, i) => {
+      if (getId == a.id) {
+        console.log('중복');
+        document.querySelectorAll('.count')[i].setAttribute('value', '2');
+      } else {
+        console.log('중복이 아님');
+        productsArr.forEach((b, i) => {
+          if (getId == b.id) {
+            cartArr.push(b);
+            let 템플릿 = ` <div class="card" data-id="${b.id}" draggable="true">
+            <img src=${b.photo} alt="" class="card-img" />
+            <h4 class="card-title">${b.title}</h4>
+            <p class="card-brand">${b.brand}</p>
+            <p class="card-price">가격 : ${b.price}</p>
+            <input type="number", style="width : 100%" value=1 class="count">
+          </div>`;
+            cartBlack.insertAdjacentHTML('beforeend', 템플릿);
+          }
+        });
+      }
+    });
+  }
 });
 
 //~~~~~~~~
 //함수영역
 //~~~~~~~~
 
-//cart-black에 카드 넣기
-function addCartAreaCard() {
-  cartArr.forEach(function (a, i) {
-    let 템플릿 = ` <div class="card" data-id="${a.id}" draggable="true">
-<img src=${a.photo} alt="" class="card-img" />
-<h4 class="card-title">${a.title}</h4>
-<p class="card-brand">${a.brand}</p>
-<p class="card-price">가격 : ${a.price}</p>
-<input type="number" value="1" style="width: 100%";>
-</div>`;
-    cartBlack.insertAdjacentHTML('beforeend', 템플릿);
-  });
-}
 //productsArea에 카드 넣기
 
 function addProductsAreaCard(arr) {

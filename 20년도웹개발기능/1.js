@@ -4,10 +4,12 @@
 //~~~~~~~~
 //get요청
 //~~~~~~~~
+
 let productsArr, searchArr, inputValue;
 let cartArr = [];
 let productsArea = document.querySelector('.products-area');
 let cartBlack = document.querySelector('.cart-black');
+
 fetch('./store.json')
   .then((res) => res.json())
   .then(function (data) {
@@ -49,57 +51,135 @@ productsArea.addEventListener('dragstart', (e) => {
 
   e.dataTransfer.setData('setID', setId);
 });
+
 cartBlack.addEventListener('dragover', (e) => {
   e.preventDefault();
 });
+
 cartBlack.addEventListener('drop', (e) => {
   let getId = e.dataTransfer.getData('setID');
+  let sumPrice = 0;
 
-  if (cartArr.length === 0) {
-    console.log('비었음');
-
-    productsArr.forEach((a, i) => {
-      if (getId == a.id) {
-        cartArr.push(a);
-      }
-    });
-    console.log(cartArr);
-    nullHtml('.cart-black');
-    cartArr.forEach((b, i) => {
-      let 템플릿 = ` <div class="card" data-id="${b.id}" draggable="true">
-  <img src=${b.photo} alt="" class="card-img" />
-  <h4 class="card-title">${b.title}</h4>
-  <p class="card-brand">${b.brand}</p>
-  <p class="card-price">가격 : ${b.price}</p>
-  <input type="number", style="width : 100%" value=1 class="count">
-</div>`;
-      cartBlack.insertAdjacentHTML('beforeend', 템플릿);
-    });
-  } else {
-    console.log('안비었음');
-    //중복검사
-    cartArr.forEach((a, i) => {
-      if (getId == a.id) {
+  //어떤 카드를 드롭했는지
+  productsArr.forEach((a, i) => {
+    if (getId == a.id) {
+      console.log(cartArr);
+      if (cartArr.includes(a)) {
         console.log('중복');
-        document.querySelectorAll('.count')[i].setAttribute('value', '2');
+        let index = cartArr.indexOf(a);
+        document.querySelectorAll('.cart-black input')[index].value++;
+        let count = document.querySelectorAll('.cart-black input')[index].value;
+        let price = a.price;
+        document.querySelectorAll('.cart-black .card-price span')[
+          index
+        ].innerHTML = count * price;
       } else {
         console.log('중복이 아님');
-        productsArr.forEach((b, i) => {
-          if (getId == b.id) {
-            cartArr.push(b);
-            let 템플릿 = ` <div class="card" data-id="${b.id}" draggable="true">
-            <img src=${b.photo} alt="" class="card-img" />
-            <h4 class="card-title">${b.title}</h4>
-            <p class="card-brand">${b.brand}</p>
-            <p class="card-price">가격 : ${b.price}</p>
-            <input type="number", style="width : 100%" value=1 class="count">
-          </div>`;
-            cartBlack.insertAdjacentHTML('beforeend', 템플릿);
-          }
-        });
+        document.querySelector('.drag-here').innerHTML = '';
+        cartArr.push(a);
+        let 템플릿 = ` <div class="card" data-id="${a.id}" draggable="true">
+    <img src=${a.photo} alt="" class="card-img" />
+    <h4 class="card-title">${a.title}</h4>
+    <p class="card-brand">${a.brand}</p>
+    <p class="card-price">가격 : <span>${a.price}</span></p>
+    <input type="number" style="width : 100%" value=1 data-price="${a.price}">
+  </div>`;
+        cartBlack.insertAdjacentHTML('beforeend', 템플릿);
+      }
+    }
+    cartBlack.style.alignItems = 'flex-start';
+  });
+  cartArr.forEach((a, i) => {
+    sumPrice += Number(
+      document.querySelectorAll('.cart-black .card-price>span')[i].innerHTML
+    );
+  });
+  document.querySelector('.final-price>span').innerHTML = sumPrice;
+});
+
+cartBlack.addEventListener('input', (e) => {
+  let sumPrice = 0;
+  // console.log(e.target.dataset.price);
+  // console.log(e.target.dataset.price * e.target.value);
+  if (e.target.value <= 0) {
+    e.target.value = '';
+  } else {
+    e.target.previousElementSibling.children[0].innerHTML =
+      e.target.dataset.price * e.target.value;
+  }
+  cartArr.forEach((a, i) => {
+    sumPrice += Number(
+      document.querySelectorAll('.cart-black .card-price>span')[i].innerHTML
+    );
+  });
+  document.querySelector('.final-price>span').innerHTML = sumPrice;
+});
+
+document.querySelector('.products-area').addEventListener('click', (e) => {
+  let sumPrice = 0;
+  let clickBtn = false;
+  let double = false;
+  for (i = 0; i < document.querySelectorAll('.add-btn').length; i++) {
+    if (e.target == document.querySelectorAll('.add-btn')[i]) {
+      clickBtn = true;
+    }
+  }
+  if (clickBtn === true) {
+    cartArr.forEach((a, i) => {
+      if (a.id == e.target.dataset.id) {
+        console.log('중복');
+        double = true;
       }
     });
+    if (double === true) {
+      cartArr.forEach((a, i) => {
+        if (e.target.dataset.id == a.id) {
+          let index = cartArr.indexOf(a);
+          document.querySelectorAll('.cart-black input')[index].value++;
+          let count =
+            document.querySelectorAll('.cart-black input')[index].value;
+          let price = a.price;
+          document.querySelectorAll('.cart-black .card-price span')[
+            index
+          ].innerHTML = count * price;
+        }
+      });
+    } else {
+      productsArr.forEach((a, i) => {
+        if (e.target.dataset.id == a.id) {
+          document.querySelector('.drag-here').innerHTML = '';
+          cartArr.push(a);
+          let 템플릿 = ` <div class="card" data-id="${a.id}" draggable="true">
+    <img src=${a.photo} alt="" class="card-img" />
+    <h4 class="card-title">${a.title}</h4>
+    <p class="card-brand">${a.brand}</p>
+    <p class="card-price">가격 : <span>${a.price}</span></p>
+    <input type="number" style="width : 100%" value=1 data-price="${a.price}">
+  </div>`;
+          cartBlack.insertAdjacentHTML('beforeend', 템플릿);
+        }
+      });
+    }
   }
+  cartArr.forEach((a, i) => {
+    sumPrice += Number(
+      document.querySelectorAll('.cart-black .card-price>span')[i].innerHTML
+    );
+  });
+  document.querySelector('.final-price>span').innerHTML = sumPrice;
+});
+
+document.querySelector('.buy-btn').addEventListener('click', () => {
+  document.querySelector('.modal').style.display = 'flex';
+});
+
+document.querySelector('.exit-btn').addEventListener('click', () => {
+  document.querySelector('.modal').style.display = 'none';
+});
+
+document.querySelector('.finish-btn').addEventListener('click', () => {
+  document.querySelector('#canvas').style.display = 'block';
+  // document.querySelector('#canvas').style.zIndex = '10';
 });
 
 //~~~~~~~~
@@ -115,7 +195,7 @@ function addProductsAreaCard(arr) {
     <h4 class="card-title">${a.title}</h4>
     <p class="card-brand">${a.brand}</p>
     <p class="card-price">가격 : ${a.price}</p>
-    <button class="add-btn">담기</button>
+    <button class="add-btn" data-id="${a.id}">담기</button>
   </div>`;
     productsArea.insertAdjacentHTML('beforeend', 템플릿);
   });

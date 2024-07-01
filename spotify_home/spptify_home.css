@@ -1,0 +1,41 @@
+html {
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.cl-white {
+  color: white;
+}
+
+.cl-gray {
+  color: gray;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.cl-#eee {
+  color: #eee;
+}/*# sourceMappingURL=spptify_home.css.map */

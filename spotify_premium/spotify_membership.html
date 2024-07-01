@@ -7,16 +7,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="./sfotify.css" />
-    <title>Sfotify</title>
+    <link
+      type="image/png"
+      sizes="32x32"
+      rel="icon"
+      href="../spotify/img/icons8-스포티-파이-32.png"
+    />
+    <link rel="stylesheet" href="./spotify_membership.css" />
+    <title>Spotify Membership</title>
   </head>
   <body>
     <div class="wrap">
       <!-- 네비게이션 바 -->
-      <nav>
-        <div class="nav-container container">
+      <nav class="bg-black">
+        <div class="nav-container">
           <img
-            src="./Spotify-Black-and-White-Logo.png"
+            src="./img/Spotify-Black-and-White-Logo.png"
             alt=""
             width="130px;"
             class="nav-left"
@@ -35,7 +41,7 @@
       </nav>
       <!-- 포스터 -->
       <section class="poster">
-        <div class="poster-container container">
+        <div class="poster-container">
           <div class="poster-left">
             <h1 class="cl-white">
               3개월 동안 0원에 Premium을 이용할 수 있는 혜택이 곧 종료됩니다
@@ -66,19 +72,19 @@
         </div>
       </section>
       <!-- 다운로드 -->
-      <section class="download">
-        <div class="download-container container">
+      <section class="download text-center">
+        <div class="download-container">
           <h1>앱을 다운로드하세요</h1>
           <h2>
             1대의 모바일 기기에서 7일 동안 무료로 Spotify Premium 멤버십을
             이용해보세요. 결제 세부 정보는 필요하지 않습니다.
           </h2>
           <div class="download-btn-div">
-            <div class="download-google-btn">
+            <div class="download-google-btn bg-black">
               <span>get it on</span>
               <h4>Google Play</h4>
             </div>
-            <div class="download-appstore-btn">
+            <div class="download-appstore-btn bg-black">
               <span>Download on the</span>
               <h4>App Store</h4>
             </div>
@@ -91,40 +97,40 @@
         </div>
       </section>
       <!-- WHY -->
-      <section class="why">
-        <div class="why-container container">
+      <section class="why text-center">
+        <div class="why-container">
           <h1>Spotify를 이용해야 하는 이유</h1>
           <ul class="why-ul">
-            <li class="why-li">
+            <li>
               <img
-                src="https://i.scdn.co/image/ab671c3d0000f430cd6c528745e510c5be63a012"
+                src="./img/ab671c3d0000f4304884c3f94083925da17092d4.png"
                 alt=""
                 width="142px"
               />
               <h3>새로운 음악 발견하기</h3>
               <p>8천만 개가 넘는 트랙을 즐겨보세요.</p>
             </li>
-            <li class="why-li">
+            <li>
               <img
-                src="./ab671c3d0000f4304884c3f94083925da17092d4.png"
+                src="./img/ab671c3d0000f43009302fbaf6259b4c117c704f.png"
                 alt=""
                 width="142px"
               />
               <h3>여러 기기에서 스트리밍</h3>
               <p>모바일, PC, 태블릿에서 음악을 들어보세요.</p>
             </li>
-            <li class="why-li">
+            <li>
               <img
-                src="./ab671c3d0000f4306998d3ffd58aad6da6afdf67.png"
+                src="./img/ab671c3d0000f4306998d3ffd58aad6da6afdf67.png"
                 alt=""
                 width="142px"
               />
               <h3>나만의 맞춤 플레이리스트</h3>
               <p>음악 취향에 맞춰 만들었습니다.</p>
             </li>
-            <li class="why-li">
+            <li>
               <img
-                src="./ab671c3d0000f430cd6c528745e510c5be63a012.png"
+                src="./img/ab671c3d0000f430cd6c528745e510c5be63a012.png"
                 alt=""
                 width="142px"
               />
@@ -136,7 +142,7 @@
       </section>
       <!-- 요금제 -->
       <section class="charge">
-        <div class="charge-container container">
+        <div class="charge-container">
           <h1 class="text-center">요금제 선택하기</h1>
           <p class="text-center">
             휴대폰, 스피커 및 기타 기기에서 제한 없이 마음껏 들으세요.
@@ -195,7 +201,7 @@
               </ul>
             </li>
             <li class="charge-grid-footer">
-              <button class="charge-start-btn">시작하기</button>
+              <button class="charge-start-btn bg-black">시작하기</button>
               <p class="cl-gray">
                 개인 요금제에만 적용됩니다. 이후 매월 10,900원이
                 부과됩니다(부가세 별도).
@@ -205,11 +211,11 @@
               </p>
             </li>
             <li class="charge-grid-footer">
-              <button class="charge-start-btn">시작하기</button>
+              <button class="charge-start-btn bg-black">시작하기</button>
               <p class="cl-gray"><u>이용 약관</u>이 적용됩니다.</p>
             </li>
             <li class="charge-grid-footer">
-              <button class="charge-start-btn">시작하기</button>
+              <button class="charge-start-btn bg-black">시작하기</button>
               <p class="cl-gray"><u>이용 약관</u>이 적용됩니다.</p>
             </li>
           </ul>
@@ -217,10 +223,10 @@
       </section>
       <!-- 질문 -->
       <section class="question">
-        <div class="question-container container">
+        <div class="question-container">
           <h1 class="text-center">궁금한 점이 있으신가요?</h1>
           <h2 class="text-center">답변을 드리겠습니다.</h2>
-          <ul class="question-ul">
+          <ul>
             <li>
               Spotify Premium이란 무엇인가요?
               <div class="question-dropdown-div"></div>
@@ -246,17 +252,17 @@
         </div>
       </section>
       <!-- 푸터 -->
-      <footer>
-        <div class="footer-container container">
+      <footer class="bg-black">
+        <div class="footer-container">
           <div class="footer-content">
             <div class="footer-content-left">
               <ul class="footer-content-left-ul">
                 <li>
                   <img
-                    src="./Spotify-Black-and-White-Logo.png"
+                    src="../spotify_premium/img/Spotify-Black-and-White-Logo.png"
                     alt=""
                     width="130px;"
-                    class="footer-content-right-img"
+                    class="footer-content-left-img"
                   />
                 </li>
                 <li>
@@ -293,13 +299,13 @@
                 </li>
               </ul>
             </div>
-            <div class="footer-content-right">
+            <div class="footer-content-right text-end">
               <i class="fa-brands fa-instagram cl-white"></i>
               <i class="fa-brands fa-twitter cl-white"></i>
               <i class="fa-brands fa-facebook cl-white"></i>
             </div>
           </div>
-          <p class="cl-gray footer-lang-p">대한민국(한국어)</p>
+          <p class="footer-lang cl-gray text-end">대한민국(한국어)</p>
           <div class="footer-last-div">
             <ul>
               <li><a href="" class="cl-gray">법률 정보</a></li>

@@ -1,0 +1,3 @@
+@use '../spotify_normalize/reset';
+$lightgray: #eee;
+@include reset.letterColor($lightgray);

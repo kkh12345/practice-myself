@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   line-height: 1.5;
 }
@@ -14,6 +15,16 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+div,
+footer,
+header,
+section,
+main,
+ul,
+li {
+  box-sizing: border-box;
 }
 
 .bg-black {
@@ -36,6 +47,368 @@ a {
   text-align: end;
 }
 
-.cl-#eee {
-  color: #eee;
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.bg-dark-black {
+  background-color: #080808;
+}
+
+.bg-light-black {
+  background-color: #141313;
+}
+
+.bg-bright-black {
+  background-color: #212121;
+}
+
+.alert > button, .left-big-bottom-footer > button, .left-big-bottom-playlist > button,
+.left-big-bottom-podcast > button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.alert > button {
+  background-color: white;
+  font-size: 14px;
+}
+
+.left-big-bottom-footer > button {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.right-big::-webkit-scrollbar {
+  width: 15px;
+  display: none;
+}
+
+.right-big:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.right-big::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.left-big-bottom::-webkit-scrollbar {
+  width: 15px;
+  display: none;
+}
+
+.left-big-bottom:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.left-big-bottom::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.root {
+  height: 100%;
+  padding: 8px;
+}
+.root > .wrap-grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 2fr 7fr 1fr;
+  gap: 10px;
+}
+
+.left-big-top {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.left-big-top > ul {
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  justify-content: baseline;
+  align-items: stretch;
+  gap: 20px;
+  flex-direction: column;
+}
+.left-big-top > ul > li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.left-big-bottom {
+  padding: 15px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+.left-big-bottom > h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  position: relative;
+}
+.left-big-bottom > h3 > .fa-plus {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.left-big-bottom > h3 > .fa-book {
+  margin-right: 10px;
+}
+
+.left-big-bottom-playlist,
+.left-big-bottom-podcast {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.left-big-bottom-playlist > h4,
+.left-big-bottom-podcast > h4 {
+  margin: 10px 0;
+}
+.left-big-bottom-playlist > p,
+.left-big-bottom-podcast > p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+.left-big-bottom-footer {
+  padding: 0 15px;
+  font-size: 12px;
+}
+.left-big-bottom-footer > ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: safe;
+  gap: 15px;
+}
+.left-big-bottom-footer > button {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.right-big {
+  height: 100%;
+  grid-column: 2/3;
+  grid-row: 1/3;
+  border-radius: 10px;
+  overflow-y: scroll;
+  position: relative;
+}
+.right-big > .right-big-header {
+  padding: 10px 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.right-big > .right-big-content {
+  padding: 10px 20px;
+}
+
+.right-big-header-left {
+  font-size: 20px;
+}
+.right-big-header-left > i {
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.right-big-header-right > .join-btn {
+  background-color: transparent;
+}
+.right-big-header-right > .login-btn, .right-big-header-right > .join-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+}
+
+.popular-artist-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+  grid-template-rows: 1fr;
+}
+.popular-artist-grid > .artist-card {
+  padding: 10px;
+}
+.popular-artist-grid > .artist-card > .artist-img {
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  background-image: url("./img/다운로드.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+.popular-artist-grid > .artist-card > h4 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.popular-artist-grid > .artist-card > p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.popular-album-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+  grid-template-rows: 1fr;
+}
+.popular-album-grid > .album-card {
+  padding: 10px;
+}
+.popular-album-grid > .album-card > .album-img {
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  background-image: url("./img/images.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+}
+.popular-album-grid > .album-card > h4 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.popular-album-grid > .album-card > p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.popular-radio-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+  grid-template-rows: 1fr;
+}
+.popular-radio-grid > .radio-card {
+  padding: 10px;
+}
+.popular-radio-grid > .radio-card > .radio-img {
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  background-image: url("./img/릴러말즈.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+}
+.popular-radio-grid > .radio-card > h4 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.popular-radio-grid > .radio-card > p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.right-big-footer {
+  width: 100%;
+  padding: 75px 20px;
+}
+.right-big-footer > .footer-container {
+  width: 100%;
+  padding: 0 10px;
+}
+.right-big-footer > .footer-container > p:last-child {
+  margin: 30px 0;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.footer-content {
+  border-bottom: 0.1px solid gray;
+  padding-bottom: 30px;
+}
+.footer-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.footer-content-left {
+  width: 70%;
+  float: left;
+}
+.footer-content-left > ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+}
+.footer-content-left > ul > li {
+  width: 25%;
+}
+.footer-content-left > ul > li > ul > li {
+  margin-bottom: 10px;
+}
+.footer-content-left > ul > li > ul > li:first-child {
+  font-weight: 600;
+}
+
+.footer-content-right {
+  width: 30%;
+  float: right;
+}
+.footer-content-right > i {
+  padding: 17px;
+  margin-left: 10px;
+  font-size: 20px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.footer-content-left-img {
+  margin-top: -10px;
+}
+
+.alert {
+  padding: 10px 20px;
+  grid-column: 1/3;
+  grid-row: 3/4;
+  position: relative;
+  background: linear-gradient(90deg, rgb(167, 34, 180), 40%, rgb(31, 107, 169));
+}
+.alert > h4 {
+  margin: 0;
+}
+.alert > p {
+  margin: 0;
+}
+.alert > button {
+  padding: 15px 20px;
+  margin: 0;
+  font-weight: 600;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
 }/*# sourceMappingURL=spptify_home.css.map */

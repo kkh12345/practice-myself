@@ -19,19 +19,17 @@ h2 {
 }
 
 // <<<<<<<<<<<<네비게이션 바 >>>>>>>>>>>>//
-nav {
-  > .nav-container {
-    padding: 20px 0;
-    @extend %container;
-    // @include flex(space-between, center, 0px);
-    @include reset.flex(space-between, center, 0px);
-  }
+.nav-container {
+  padding: 20px 0;
+  @extend %container;
+  // @include flex(space-between, center, 0px);
+  @include reset.flex(space-between, center, 0px);
 }
 
 .nav-right {
   margin: 0;
   padding: 0;
-  @include reset.flex(baseline, safe, 20px);
+  @include reset.flex(baseline, stretch, 20px);
   > li {
     > a {
       font-weight: 600;
@@ -51,7 +49,7 @@ nav {
   > .poster-container {
     padding: 30px 0;
     @extend %container;
-    @include reset.flex(baseline, safe, 0);
+    @include reset.flex(baseline, stretch, 0);
   }
 }
 
@@ -117,7 +115,6 @@ nav {
     height: 40px;
     margin: 0 10px;
     display: inline-block;
-
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -155,8 +152,7 @@ nav {
 .why-ul {
   padding: 0;
   margin-top: 75px;
-
-  @include reset.flex(center, safe, 20px);
+  @include reset.flex(center, stretch, 20px);
   > li {
     flex-grow: 1;
     flex-shrink: 1;
@@ -312,6 +308,7 @@ nav {
 }
 
 // <<<<<<<<<<<<<<<<<footer>>>>>>>>>>>>>>>>>>>>
+
 footer {
   > .footer-container {
     @extend %container;
@@ -333,7 +330,7 @@ footer {
 
   > ul {
     padding-right: 50px;
-    @include reset.flex(flex-start, safe, 70px);
+    @include reset.flex(flex-start, stretch, 70px);
     > li {
       > ul {
         > li {
@@ -374,8 +371,8 @@ footer {
 .footer-last-div {
   margin-top: 20px;
   font-size: 12px;
-  @include reset.flex(space-between, safe, 0px);
+  @include reset.flex(space-between, stretch, 0px);
   > ul {
-    @include reset.flex(baseline, safe, 20px);
+    @include reset.flex(baseline, stretch, 20px);
   }
 }

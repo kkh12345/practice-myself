@@ -12,6 +12,15 @@ ul {
 a {
   text-decoration: none;
 }
+div,
+footer,
+header,
+section,
+main,
+ul,
+li {
+  box-sizing: border-box;
+}
 
 @mixin textAlign($val) {
   .text-#{$val} {

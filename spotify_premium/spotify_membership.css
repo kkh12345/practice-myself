@@ -17,6 +17,16 @@ a {
   text-decoration: none;
 }
 
+div,
+footer,
+header,
+section,
+main,
+ul,
+li {
+  box-sizing: border-box;
+}
+
 .bg-black {
   background-color: black;
 }
@@ -45,7 +55,7 @@ h2 {
   font-size: 25px;
 }
 
-footer > .footer-container, .question > .question-container, .charge > .charge-container, .why > .why-container, .download > .download-container, .poster > .poster-container, nav > .nav-container {
+footer > .footer-container, .question > .question-container, .charge > .charge-container, .why > .why-container, .download > .download-container, .poster > .poster-container, .nav-container {
   max-width: 1170px;
   margin: 0 auto;
   width: 90%;
@@ -57,7 +67,7 @@ footer > .footer-container, .question > .question-container, .charge > .charge-c
   display: block;
 }
 
-nav > .nav-container {
+.nav-container {
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
@@ -70,7 +80,7 @@ nav > .nav-container {
   padding: 0;
   display: flex;
   justify-content: baseline;
-  align-items: safe;
+  align-items: stretch;
   gap: 20px;
 }
 .nav-right > li > a {
@@ -89,7 +99,7 @@ nav > .nav-container {
   padding: 30px 0;
   display: flex;
   justify-content: baseline;
-  align-items: safe;
+  align-items: stretch;
   gap: 0;
 }
 
@@ -185,7 +195,7 @@ nav > .nav-container {
   margin-top: 75px;
   display: flex;
   justify-content: center;
-  align-items: safe;
+  align-items: stretch;
   gap: 20px;
 }
 .why-ul > li {
@@ -340,7 +350,7 @@ footer > .footer-container {
   padding-right: 50px;
   display: flex;
   justify-content: flex-start;
-  align-items: safe;
+  align-items: stretch;
   gap: 70px;
 }
 .footer-content-left > ul > li > ul > li {
@@ -379,12 +389,12 @@ footer > .footer-container {
   font-size: 12px;
   display: flex;
   justify-content: space-between;
-  align-items: safe;
+  align-items: stretch;
   gap: 0px;
 }
 .footer-last-div > ul {
   display: flex;
   justify-content: baseline;
-  align-items: safe;
+  align-items: stretch;
   gap: 20px;
 }/*# sourceMappingURL=spotify_membership.css.map */

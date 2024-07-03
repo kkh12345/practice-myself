@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+}
+
+header,
+div {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1008px;
+  margin: 0 auto;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-bright-red {
+  background-color: #fa0050;
+}
+
+.color-white {
+  color: white;
+}
+
+.color-bright-red {
+  color: #fa0050;
+}
+
+.font-big {
+  font-size: 20px;
+}
+
+.font-most-big {
+  font-size: 25px;
+}
+
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  background-image: url(./img/logo-yogiyo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+  width: 100px;
+  height: 50px;
+}
+
+.login-btn {
+  background-color: transparent;
+  width: 150px;
+  padding: 5px 0;
+  border: 1px solid #ea7266;
+}
+
+.search-area {
+  background-image: url(./img/bg-top.png);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 235px;
+  position: relative;
+}
+
+.search-elements-center {
+  display: flex;
+  position: absolute;
+  top: calc(50% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.location-btn {
+  border: none;
+  padding: 0;
+}
+
+.location-btn > .fa-location-crosshairs {
+  padding: 10px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,12 +1,14 @@
 body {
   margin: 0;
 }
-div {
+div,
+ul,
+li {
   box-sizing: border-box;
 }
 .root {
   min-width: 1180px;
-  background-color: #ffffff;
+  background-color: #f2f4f7;
 }
 // ==========================
 //============헤더============
@@ -55,7 +57,7 @@ div {
   position: absolute;
 }
 .logo_daum {
-  width: 45px;
+  width: 50px;
   top: 50%;
   left: 13px;
   transform: translateY(-50%);
@@ -87,7 +89,7 @@ div {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  padding: 10px;
+  padding: 10px 13px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   background-color: #ffffff;
 }
@@ -119,8 +121,9 @@ div {
 // ===========================
 .main {
   display: flex;
+
   justify-content: center;
-  gap: 16px;
+  align-items: flex-start;
 }
 .main_box {
   background-color: white;
@@ -131,18 +134,21 @@ div {
 // ===================메인 왼쪽 박스========================
 .main_left_box {
   width: 768px;
+  margin-right: 16px;
 }
 // ===================왼쪽 광고 1=====================
-.left_ad_1 {
+// =========&&왼쪽 광고 2(1이랑같은스타일)=============
+
+.left_ad {
   padding: 20px;
   margin-bottom: 16px;
 }
-.left_ad_1_inner {
+.left_ad_inner {
   display: flex;
   width: 100%;
   position: relative;
 }
-.left_ad_1_inner::after {
+.left_ad_inner::after {
   content: 'AD';
   display: block;
   padding: 0 3px;
@@ -154,8 +160,15 @@ div {
   top: 5px;
   right: 5px;
 }
+
 .left_ad_1_img {
   background: url(./img/left_ad_1.jpg);
+}
+.left_ad_2_img {
+  background: url(./img/left_ad_2.jpg);
+}
+.left_ad_1_img,
+.left_ad_2_img {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -167,113 +180,373 @@ div {
   vertical-align: top;
   margin-right: 5px;
 }
-.left_ad_1_content {
+.left_ad_content {
   padding-left: 20px;
   flex-grow: 1;
   background-color: #f2f4f7;
 }
-.left_ad_1_content > p {
+.left_ad_content > p {
   color: gray;
 }
-.left_ad_1_content > p:first-child {
+.left_ad_content > p:first-child {
   margin-bottom: 5px;
   font-size: 12px;
 }
-.left_ad_1_content > p:nth-child(3) {
+.left_ad_content > p:nth-child(3) {
   margin: 0;
   font-size: 14px;
 }
-.left_ad_1_content > h2 {
+.left_ad_content > h2 {
   margin: 0;
 }
 // ===================왼쪽 뉴스 박스=====================
-.news_header > ul {
+// =================&&왼쪽 연예 박스=====================
+.left_box {
+  margin-bottom: 16px;
+}
+.left_box_header {
+  margin-bottom: 16px;
+}
+
+.left_box_header > ul {
   display: flex;
   align-items: center;
-  padding: 20px 24px 0;
+  padding: 20px 24px 16px;
+  margin-bottom: 0;
   list-style: none;
 }
-.news_header_title {
+
+.left_box_header_title {
   display: flex;
   align-items: center;
   margin-right: 20px;
 }
-.news_header_title > img {
+.news_box_header_title > img {
   width: 40px;
 }
-.news_header_title > button {
+.interest_header_title_img,
+.entertain_header_title_img,
+.sport_header_title_img,
+.cafe_header_title_img {
+  width: 40px;
+  height: 40px;
+  background: url(./img/이미지모음2.png);
+  background-size: 200px 200px;
+}
+.entertain_header_title_img {
+  background-position: -45px 0;
+}
+.sport_header_title_img {
+  background-position: -90px 0;
+}
+.interest_header_title_img {
+  background-position: -45px -45px;
+}
+.cafe_header_title_img {
+  background-position: 0 -45px;
+}
+.left_box_header_title > button {
   font-size: 20px;
   vertical-align: middle;
   border: none;
   background: transparent;
 }
-.news_header_title span {
+.left_box_header_title span {
   color: gray;
 }
 .news_favorite_btn,
-.news_category_btn {
+.entertain_synthesis_btn,
+.sport_synthesis_btn,
+.interest_recommend_btn,
+.cafe_btn,
+.left_box_header_category_btn {
   padding: 10px 15px;
   margin-right: 10px;
   border: none;
   border-radius: 30px;
 }
-.news_favorite_btn {
+.cafe_btn {
+  background-color: #f5dcde;
+  color: #f74853;
+  font-size: 16px;
+}
+.interest_recommend_btn {
+  background-color: #ffeedd;
+  color: #ff8b17;
+  font-size: 16px;
+}
+.entertain_synthesis_btn {
+  background-color: #f0e5ff;
+  font-size: 16px;
+  color: #9148f7;
+}
+.news_favorite_btn,
+.sport_synthesis_btn {
   background-color: #dce4f5;
   color: #4881f7;
   font-size: 16px;
 }
-.news_category_btn {
+.left_box_header_category_btn {
   background: transparent;
   border: 1px solid #ddd;
   font-size: 15px;
 }
-.news_main {
+
+.left_box_main {
   display: flex;
-  gap: 13px;
-  padding: 0 24px 16px;
-  margin-bottom: 0;
+  align-items: flex-start;
+  padding: 0 24px;
 }
-.news_main_left {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 13px;
+
+.left_box_main_left {
   width: 50%;
+  padding-right: 11px;
   padding-left: 0;
+  margin: 0;
   list-style: none;
 }
-.news_main_left_card > img {
+
+.left_box_main_left > li {
+  float: left;
+  width: 50%;
+  padding-right: 16px;
+  padding-bottom: 16px;
+}
+
+.left_box_main_card > img {
   display: block;
   width: 100%;
   border-radius: 10px;
 }
-.news_main_left_card > p {
-  font-size: 15px;
+
+.left_box_main_card > p {
+  margin: 5px 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.news_main_left_card > span {
+
+.left_box_main_card > span {
   color: gray;
 }
-.news_main_right {
+
+.left_box_main_right {
   width: 50%;
+  margin-top: 0;
   padding-left: 0;
-  margin-bottom: 0;
   list-style: none;
 }
-.news_main_right > li {
-  width: 100%;
-}
-.news_main_right > li:not(:last-child) > p {
-  border-bottom: 1px solid #ddd;
-}
-.news_main_right > li > p {
-  margin: 0;
+
+.left_box_main_right > li {
+  padding: 8px 0 15px;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.left_box_main_right > li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.left_box_footer {
+  margin-top: 13px;
+  padding: 13px 0;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+// ================왼쪽 관심 키워드 박스====================
+
+.interest_main_grid_container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-gap: 13px;
+  padding: 0 24px;
+  list-style: none;
+}
+
+.interest_main_grid_container img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/2;
+  border-radius: 10px;
+}
+.interest_main_grid_container > li > p {
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.interest_grid_item_p1 {
+  margin: 6px 0 0;
+}
+.interest_grid_item_p2 {
+  margin: 0 0 6px;
+}
+
+.interest_main_grid_item_big {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  background-image: url(./img/차.jfif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+.interest_main_grid_item_big > h3 {
+  margin: 0;
+}
+.interest_main_grid_item_big > span {
+  color: gray;
+}
+.interest_main_grid_item_small > span {
+  color: gray;
+}
+.interest_main_grid_item_small > span::before {
+  display: inline-block;
+  content: '맛집';
+  color: orange;
+}
+// ================왼쪽 카페 박스====================
+.cafe_main_grid_wrap {
+  display: flex;
+}
+
+.cafe_main_grid_container {
+  width: 50%;
+  padding: 0 24px;
+  margin: 0;
+  list-style: none;
+}
+.cafe_main_grid_item {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 16px;
+}
+.cafe_main_grid_item_num {
+  font-size: 25px;
+  font-weight: bold;
+}
+.cafe_main_grid_item_left > p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.cafe_main_grid_item > img {
+  display: block;
+  width: 40%;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.cafe_comment {
+  color: gray;
+}
+
+// ================왼쪽 오늘의 이슈 박스====================
+.today_issue_box {
+  padding: 20px 24px;
+  background-color: #766ca0;
+  color: white;
+  border-radius: 15px;
+  z-index: 97;
+}
+.today_issue_box a {
+  color: white;
+  text-decoration: none;
+}
+.today_issue_title_box {
+  position: relative;
+}
+.today_issue_title_box > h2 {
+  padding-left: 90px;
+  margin-top: 0;
+}
+.today_issue_title_box > video {
+  position: absolute;
+  top: -10px;
+  z-index: 98;
+}
+.today_issue_main {
+  display: flex;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.today_issue_main::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.today_issue_today_bubble {
+  margin-right: 13px;
+}
+.today_issue_today_bubble,
+.seen_a_lot_list {
+  width: 50%;
+  padding: 15px;
+  background-color: #8d84ad;
+  border-radius: 10px;
+  z-index: 99;
+}
+.today_issue_main h3 {
+  margin-top: 0;
+}
+.today_issue_main h3::before {
+  content: '#';
+  display: inline-block;
+  margin-right: 10px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background-color: white;
+  color: #766ca0;
+}
+.today_issue_today_bubble > button {
+  max-width: 120px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  margin-bottom: 13px;
+  border: none;
+  border-radius: 30px;
+  background-color: #a9a2c3;
+  color: white;
+  font-size: 16px;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
+}
+.seen_a_lot_list {
+  display: flex;
+  flex-direction: column;
+}
+.seen_a_lot_list_ol {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  list-style: none;
+}
+.seen_a_lot_list_ol > li {
+  flex-grow: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.seen_a_lot_list_ol_marker {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 0 5px;
+  background-color: #a099bc;
+  border-radius: 50%;
 }
 // ===================메인 오른쪽 박스=====================
 .main_right_box {
   width: 384px;
+  position: sticky;
+  top: 0;
 }
 // ===================오른쪽 로그인 박스=====================
 .login_box {
@@ -357,6 +630,7 @@ div {
   color: gray;
 }
 // ===================오른쪽 광고 1=====================
+
 .right_ad_1_box {
   padding: 20px 42px;
   margin-bottom: 16px;
@@ -462,6 +736,7 @@ div {
 .hot_deal_footer_btn_box::after {
   content: 'AD';
   display: block;
+
   padding: 1px 5px;
   font-size: 10px;
   color: gray;
@@ -472,8 +747,11 @@ div {
   top: 50%;
   transform: translateY(-50%);
 }
+
 .shopping_footer > .page_btn,
-.hot_deal_footer_btn_box > .page_btn {
+.hot_deal_footer_btn_box > .page_btn,
+.entertain_footer > .page_btn,
+.left_box_footer > .page_btn {
   padding: 5px 13px;
   margin: 0 5px;
   border: 1px solid #ddd;
@@ -537,6 +815,10 @@ div {
 }
 
 // ===================오른쪽 핫딜 박스=====================
+.hot_deal_box {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+}
 .hot_deal_nav {
   padding: 20px 24px 0;
 }
@@ -593,4 +875,55 @@ div {
 .hot_deal_footer_btn_box {
   text-align: center;
   position: relative;
+}
+// ==========================
+//============푸터===========
+// ===========================
+.footer_content_wrap {
+  max-width: 1168px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #333;
+}
+.footer a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer_announce_box,
+.footer_link_box {
+  padding-left: 0;
+  list-style: none;
+}
+.footer_announce_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  margin: 50px 0 0;
+
+  border-bottom: 1px solid #ddd;
+}
+.footer_announce_box button {
+  background: transparent;
+  border: none;
+}
+.footer_announce_box button > span {
+  color: gray;
+  vertical-align: top;
+}
+.footer_link_box {
+  margin: 0;
+  padding: 30px 0 75px;
+}
+.footer_link_box a:not(:last-child)::after {
+  content: '·';
+  padding-left: 5px;
+}
+.footer_link_box > li:not(:last-child) {
+  margin-bottom: 13px;
+}
+
+.footer_link_box > li:last-child::before {
+  content: '©';
+  padding-right: 5px;
 }

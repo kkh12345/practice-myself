@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+}
+div,
+ul,
+li {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.cl-dark-green {
+  color: #36808d;
+}
+.header {
+  background-color: #f5f8f8;
+}
+.nav_top_container {
+  max-width: 1420px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav_top_left {
+  display: flex;
+  gap: 5px;
+  font-size: 14px;
+  color: gray;
+}
+.nav_top_left a {
+  font-weight: 600;
+}
+/* .nav_top_left > li {
+  flex-shrink: 0;
+} */
+.nav_top_left > li:not(:first-child) a {
+  color: gray;
+}
+.nav_top_right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+.nav_top_right a {
+  font-weight: 500;
+}
+.nav_top_right > li:first-child {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.nav_top_right > li:last-child {
+  padding: 13px 10px;
+  border-bottom: 1px solid #36808d;
+}
+.sun_ico,
+.menu_ico,
+.state_ico {
+  display: inline-block;
+}
+.sun_ico {
+  width: 24px;
+  height: 30px;
+  background: url(./img/weather.png);
+  background-size: auto 40px;
+}
+.menu_ico {
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  background: url(./img/menu.png);
+  background-repeat: no-repeat;
+}

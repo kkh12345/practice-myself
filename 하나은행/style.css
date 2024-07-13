@@ -12,20 +12,31 @@ body {
   margin: 0;
 }
 a {
+  color: black;
   text-decoration: none;
 }
 button {
   cursor: pointer;
 }
+.rootBox {
+  min-width: 1150px;
+}
+/* ===================
+=========헤더=========
+====================== */
 .header {
   border-bottom: 2px solid #009591;
 }
-.header_topBox-inner,
-.header_navBar-inner {
+.header_topBox-innerBox,
+.header_navBar-innerBox,
+.main_section01-innerBox,
+.main_section02-innerBox,
+.main_section03-innerBox,
+.footer_innerBox {
   max-width: 1150px;
   margin: 0 auto;
 }
-.header_topBox-inner {
+.header_topBox-innerBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,7 +49,6 @@ button {
 .header_topBox-left > a {
   margin-right: 5px;
 }
-
 .header_topBox-right > a {
   margin-left: 10px;
 }
@@ -50,15 +60,15 @@ button {
   border: none;
   font-size: 12px;
 }
-.header_topBox-right > button > img {
+.header_language-btn > img {
   width: 12px;
   height: 12px;
 }
-
-.header_navBar-inner {
+.header_navBar-innerBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 40px;
 }
 .header_navBar-menu {
   display: flex;
@@ -70,6 +80,370 @@ button {
   border: none;
   font-size: 18px;
 }
-.header_icon-group > img {
+.header_chatBot-icon {
+  cursor: pointer;
+}
+.header_menu-icon {
+  background: url(./img/icon-30-menu-all.png);
+}
+.header_search-icon {
+  background: url(./img/icon-30-search.png);
+}
+.header_menu-icon,
+.header_search-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
   margin-left: 10px;
+  background-size: cover;
+  cursor: pointer;
+}
+.header_menu-icon:hover {
+  background: url(./img/icon-30-menu-all-hover.png);
+}
+.header_search-icon:hover {
+  background: url(./img/icon-30-search-hover.png);
+}
+
+/* =========================
+=========메인 섹션 1=========
+============================ */
+
+.main_section01 {
+  background-color: #fafbfb;
+}
+.main_section01-innerBox {
+  display: flex;
+  gap: 58px;
+}
+.main_section01-left {
+  width: 760px;
+  height: 440px;
+  background-image: url(./img/football_play_main_slide.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.main_event-txtBox {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.main_event-banner {
+  display: inline-block;
+  padding: 3px 7px;
+  border: 1px solid #ccc;
+  color: gray;
+  font-size: 14px;
+}
+.main_event-txtBox > h1 {
+  margin: 20px 0 15px;
+  font-size: 40px;
+}
+.main_event-txtBox > p {
+  color: gray;
+  margin: 5px 0;
+  font-size: 14px;
+}
+.main_learnMore-btn {
+  margin: 30px 0 0;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 30px;
+  background-color: #333333;
+}
+.main_learnMore-btn > a {
+  color: white;
+}
+.main_learnMore-btn:hover > a {
+  text-decoration: underline;
+}
+.main_event-pageBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 15px;
+  background-color: #969797;
+  color: white;
+  border: none;
+  border-radius: 35px;
+  position: absolute;
+  right: 140px;
+  bottom: 25px;
+}
+.main_event-pageBtn:hover {
+  background-color: #333333;
+}
+.main_pause-icon {
+  background: url(./img/btn_main_autoplay_pause.png);
+}
+.main_arrowLeft-icon {
+  background: url(./img/icon-main-arrow-left.png);
+}
+.main_arrowRight-icon {
+  background: url(./img/icon-main-arrow-right.png);
+}
+.main_pause-icon,
+.main_arrowLeft-icon,
+.main_arrowRight-icon {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-position: center;
+}
+.main_section01-right {
+  flex-grow: 1;
+}
+.main_shortcut-btnGroup {
+  display: flex;
+  margin: 47px 0 30px;
+}
+.main_accountCheck-btn {
+  margin-right: 15px;
+}
+.main_accountCheck-btn,
+.main_accountTransfer-btn {
+  flex-grow: 1;
+  display: block;
+  padding: 0;
+  aspect-ratio: 4/3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  box-sizing: border-box;
+  position: relative;
+}
+.main_accountCheck-btn:hover .main_arrowRight-iconBig,
+.main_accountTransfer-btn:hover .main_arrowRight-iconBig {
+  display: inline-block;
+}
+.main_accountTransfer-btn > span,
+.main_accountCheck-btn > span {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
+.main_accountTransfer-btn {
+  background-color: #0b9b97;
+}
+.main_accountCheck-btn {
+  background-color: #3d435b;
+}
+.main_arrowRight-iconBig {
+  display: none;
+  width: 10px;
+  height: 18px;
+  margin-left: 5px;
+  background-image: url(./img/btn_quick_on.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: text-top;
+}
+.main_shortcut-iconGroup {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: auto;
+  gap: 20px;
+}
+.main_shortcut-iconGroup > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main_shortcut-iconGroup > li > p {
+  margin: 5px 0;
+}
+
+/* =========================
+=========메인 섹션 2=========
+============================ */
+.main_section02 {
+  background-color: #ecf0f1;
+}
+.main_section02-flex {
+  display: flex;
+  padding: 60px 0;
+}
+.main_section02-flex > li {
+  flex-grow: 1;
+  text-align: center;
+}
+.main_section02-flex > li:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+.main_section02-flex > li:hover h3 {
+  text-decoration: underline;
+}
+.main_section02-flex > li h3 {
+  color: black;
+  margin: 0 0 7px;
+  font-weight: 500;
+}
+.main_section02-flex > li p {
+  margin: 0;
+  color: gray;
+  font-size: 15px;
+}
+
+/* =========================
+=========메인 섹션 3=========
+============================ */
+
+.main_section03-topBox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.main_whatsNew-box {
+  flex-grow: 1;
+  margin-right: 50px;
+}
+.main_whatsNew-box > h3 {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+.main_seeMore-btn {
+  background-color: white;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  color: gray;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.main_whatsNew-box > ul > li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 14px;
+}
+.main_whatsNew-dateTxt {
+  display: inline-block;
+  color: gray;
+}
+.main_section03_linkTable {
+  border-collapse: collapse;
+  border-style: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #ddd;
+}
+.main_section03_linkTable td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.main_section03-iconGroup {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 70px;
+  padding-bottom: 50px;
+}
+.main_section03-iconGroup > li {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+.main_section03-iconGroup > li:hover {
+  box-shadow: 0 0 1px 0px #009591;
+}
+.footer {
+  border-top: 1px solid #ddd;
+}
+.footer_topBox,
+.footer_middleBox {
+  position: relative;
+}
+.footer_innerBox {
+  padding: 30px 0;
+}
+.footer_link-firstLine,
+.footer_link-secondLine {
+  font-size: 13px;
+}
+.footer_callBox {
+  text-align: end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.footer_callBox-txt {
+  color: #009591;
+  font-size: 13px;
+}
+.footer_callBox-num {
+  font-size: 24px;
+  font-weight: 600;
+}
+.footer_middleBox {
+  margin-top: 50px;
+}
+.footer_middleBox img {
+  margin-right: 10px;
+}
+.footer_copyright-txt {
+  font-size: 14px;
+  color: gray;
+  letter-spacing: -0.5px;
+}
+.footer_copyright-txt::before {
+  display: inline-block;
+  margin-right: 3px;
+  content: 'ⓒ';
+  vertical-align: 2px;
+}
+.footer_slash {
+  color: #ddd;
+  font-weight: 500;
+}
+
+.footer_selectBox {
+  margin-top: 20px;
+  position: relative;
+}
+.footer_selectBox > li {
+  display: inline-block;
+  width: 200px;
+}
+.footer_selectBox > li:not(:last-child) {
+  margin-right: -6px;
+}
+.footer_selectBox > li:not(:last-child) > button::after {
+  content: '';
+  display: inline-block;
+  background-image: url(./img/icon-20-arrow-top-666.png);
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 20px;
+  top: 9px;
+}
+.footer_selectBox > li:not(:last-child) > button {
+  display: block;
+  width: 100%;
+  padding: 10px 0 10px 20px;
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #333333;
+  text-align: start;
+  font-size: 12px;
+  position: relative;
+}
+.footer_selectBox > li:first-child > button {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.footer_selectBox > li:last-child {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }

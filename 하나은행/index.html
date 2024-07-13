@@ -7,41 +7,276 @@
     <title>하나은행</title>
   </head>
   <body>
-    <div class="header">
-      <div class="header_topBox">
-        <div class="header_topBox-inner">
-          <div class="header_topBox-left">
-            <a href="#">기업뱅킹</a>
-            <a href="#">하나카드</a>
-            <a href="#">은행소개</a>
-            <a href="#">채용안내</a>
+    <div class="rootBox">
+      <!-- =============헤더============ -->
+      <div class="header">
+        <div class="header_topBox">
+          <div class="header_topBox-innerBox">
+            <div class="header_topBox-left">
+              <a href="#">기업뱅킹</a>
+              <a href="#">하나카드</a>
+              <a href="#">은행소개</a>
+              <a href="#">채용안내</a>
+            </div>
+            <div class="header_topBox-right">
+              <a href="#">로그인</a>
+              <a href="#">인증센터</a>
+              <button class="header_language-btn">
+                Language
+                <img src="./img/icon-20-arrow-down-000.png" alt="arrow-down" />
+              </button>
+            </div>
           </div>
-          <div class="header_topBox-right">
-            <a href="#">로그인</a>
-            <a href="#">인증센터</a>
-            <button>
-              Language
-              <img src="./img/icon-20-arrow-down-000.png" alt="arrow-down" />
-            </button>
+        </div>
+        <div class="header_navBar">
+          <div class="header_navBar-innerBox">
+            <div class="header_logo-wrap">
+              <img src="./img/logo.png" alt="" />
+            </div>
+            <ul class="header_navBar-menu">
+              <li><button>조회</button></li>
+              <li><button>이체</button></li>
+              <li><button>공과금</button></li>
+              <li><button>외환</button></li>
+              <li><button>금융상품</button></li>
+            </ul>
+            <div class="header_icon-group">
+              <img
+                class="header_chatBot-icon"
+                src="./img/utility-menu_haitalk_icon.png"
+                alt=""
+              />
+              <span class="header_search-icon"></span>
+              <span class="header_menu-icon"></span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="header_navBar">
-        <div class="header_navBar-inner">
-          <div class="header_logo-wrap">
-            <img src="./img/logo.png" alt="" />
+      <!-- ================메인================== -->
+      <div class="main">
+        <!-- ==========메인 섹션 1========== -->
+        <div class="main_section01">
+          <div class="main_section01-innerBox">
+            <div class="main_section01-left">
+              <div class="main_event-txtBox">
+                <span class="main_event-banner">이벤트</span>
+                <h1>
+                  축구는 하나다! <br />
+                  하나원큐축구 Play
+                </h1>
+                <p>축구...좋아하세요?</p>
+                <p>매일매일 미션 참여하고 원큐볼 받으세요!</p>
+                <button class="main_learnMore-btn">
+                  <a href="#">자세히보기</a>
+                </button>
+              </div>
+              <button class="main_event-pageBtn">
+                <span class="main_pause-icon"></span>
+                <span class="main_arrowLeft-icon"></span>
+                <span class="main_page-num">5 / 5</span>
+                <span class="main_arrowRight-icon"></span>
+              </button>
+            </div>
+            <div class="main_section01-right">
+              <div class="main_shortcut-btnGroup">
+                <button class="main_accountCheck-btn">
+                  <span>조회<span class="main_arrowRight-iconBig"></span></span>
+                </button>
+                <button class="main_accountTransfer-btn">
+                  <span>이체<span class="main_arrowRight-iconBig"></span></span>
+                </button>
+              </div>
+              <ul class="main_shortcut-iconGroup">
+                <li>
+                  <img src="./img/icon_quick01.png" alt="" />
+                  <p>공과금</p>
+                </li>
+                <li>
+                  <img src="./img/icon_quick02.png" alt="" />
+                  <p>환율</p>
+                </li>
+                <li>
+                  <img src="./img/icon_quick03.png" alt="" />
+                  <p>오픈뱅킹</p>
+                </li>
+                <li>
+                  <img src="./img/icon_quick04.png" alt="" />
+                  <p>인증센터</p>
+                </li>
+                <li>
+                  <img src="./img/icon_quick05.png" alt="" />
+                  <p>빠른조회</p>
+                </li>
+                <li>
+                  <img src="./img/icon_quick07.png" alt="" />
+                  <p>고객센터</p>
+                </li>
+              </ul>
+            </div>
           </div>
-          <ul class="header_navBar-menu">
-            <li><button>조회</button></li>
-            <li><button>이체</button></li>
-            <li><button>공과금</button></li>
-            <li><button>외환</button></li>
-            <li><button>금융상품</button></li>
-          </ul>
-          <div class="header_icon-group">
-            <img src="./img/utility-menu_haitalk_icon.png" alt="" />
-            <img src="./img/icon-30-search.png" alt="" />
-            <img src="./img/icon-30-menu-all.png" alt="" />
+        </div>
+        <!-- ==========메인 섹션 2========== -->
+        <div class="main_section02">
+          <div class="main_section02-innerBox">
+            <ul class="main_section02-flex">
+              <li>
+                <a href="#"
+                  ><h3>예적금</h3>
+                  <p>부자되는 알짜정보</p></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><h3>펀드</h3>
+                  <p>한 눈에 보는 펀드랭킹</p></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><h3>환전지갑</h3>
+                  <p>알뜰하게 환전하기</p></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><h3>퇴직</h3>
+                  <p>든든한 노후</p></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><h3>대출</h3>
+                  <p>3분이면 한도조회 OK!</p></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- ==========메인 섹션 3========== -->
+        <div class="main_section03">
+          <div class="main_section03-innerBox">
+            <div class="main_section03-topBox">
+              <div class="main_whatsNew-box">
+                <h3>
+                  새소식 <button class="main_seeMore-btn">+더보기</button>
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#">계좌통합관리서비스 일시 중단 안내</a
+                    ><span class="main_whatsNew-dateTxt">2024-07-13</span>
+                  </li>
+                  <li>
+                    <a href="#"
+                      >장병내일준비적금, 공무원가계자금대출 신규 업무 일시중단
+                      안내</a
+                    ><span class="main_whatsNew-dateTxt">2024-07-13</span>
+                  </li>
+                  <li>
+                    <a href="#">하나원큐, 아이부자 등 앱 간편인증 순단 안내</a
+                    ><span class="main_whatsNew-dateTxt">2024-07-13</span>
+                  </li>
+                </ul>
+              </div>
+
+              <table class="main_section03_linkTable">
+                <tr>
+                  <td><a href="#">상품공시실</a></td>
+                  <td><a href="#">서식·약관자료실</a></td>
+                </tr>
+                <tr>
+                  <td><a href="#">하나소비자세상</a></td>
+                  <td>
+                    <a href="#"
+                      >손님의소리<br />
+                      (칭찬/불만/제안/신고 등)</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#">금리안내</a></td>
+                  <td><a href="#">영업점찾기</a></td>
+                </tr>
+              </table>
+            </div>
+            <ul class="main_section03-iconGroup">
+              <li><img src="./img/hana_app02.png" alt="" /></li>
+              <li><img src="./img/hana_app02.png" alt="" /></li>
+              <li><img src="./img/hana_app02.png" alt="" /></li>
+              <li><img src="./img/hana_app04_on.png" alt="" /></li>
+              <li><img src="./img/hana_app05_on.png" alt="" /></li>
+              <li><img src="./img/hana_app06_on.png" alt="" /></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ==========푸터========== -->
+      <div class="footer">
+        <div class="footer_innerBox">
+          <div class="footer_topBox">
+            <p class="footer_link-firstLine">
+              <a href="#">사고신고</a>
+              <span class="footer_dot">·</span>
+              <a href="#">상품공시실</a>
+              <span class="footer_dot">·</span>
+              <a href="#">보호금융상품등록부</a>
+              <span class="footer_dot">·</span>
+              <a href="#">경영공시</a>
+              <span class="footer_dot">·</span>
+              <a href="#">퇴직연금공시</a>
+              <span class="footer_dot">·</span>
+              <a href="#">인증센터</a>
+              <span class="footer_dot">·</span>
+              <a href="#">원격지원상담</a>
+              <span class="footer_dot">·</span>
+              <a href="#">손님의소리</a>
+              <span class="footer_dot">·</span>
+              <a href="#">상담센터</a>
+            </p>
+            <p class="footer_link-secondLine">
+              <a href="#"><b>개인정보처리방침</b></a>
+              <span class="footer_dot">·</span>
+              <a href="#">본인정보이용 제공현황</a>
+              <span class="footer_dot">·</span>
+              <a href="#">그룹사간 고객정보 제공내역조회</a>
+              <span class="footer_dot">·</span>
+              <a href="#">영업점 찾기</a>
+              <span class="footer_dot">·</span>
+              <a href="#">원큐 금융 상담서비스</a>
+            </p>
+            <div class="footer_callBox">
+              <b class="footer_callBox-txt">고객센터</b>
+              <div class="footer_callBox-num">
+                1588-1111<span class="footer_slash">/</span>1599-1111
+              </div>
+            </div>
+          </div>
+          <div class="footer_middleBox">
+            <a href="#">
+              <img src="./img/wa-mark.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="./img/iso-mark.png" alt="" />
+            </a>
+            <a href="#"><img src="./img/isms-mark-black.png" alt="" /></a>
+
+            <span class="footer_copyright-txt"
+              >Hana Bank. All rights reserved.</span
+            >
+            <div class="footer_callBox">
+              <b class="footer_callBox-txt">고객센터(해외)</b>
+              <div class="footer_callBox-num">+82-42-520-2500</div>
+            </div>
+          </div>
+          <div class="footer_bottomBox">
+            <ul class="footer_selectBox">
+              <li><button>브랜드사이트</button></li>
+              <li><button>하나네트워크</button></li>
+              <li><button>하나네트워크</button></li>
+              <li><button>하나네트워크</button></li>
+              <li>
+                <button><a href="#">하나소비자세상</a></button>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

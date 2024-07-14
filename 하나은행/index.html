@@ -10,28 +10,41 @@
     <div class="rootBox">
       <!-- =============헤더============ -->
       <div class="header">
-        <div class="header_topBox">
-          <div class="header_topBox-innerBox">
-            <div class="header_topBox-left">
+        <div class="header_top-box">
+          <div class="header_top-innerBox">
+            <div class="header_top-leftBox">
               <a href="#">기업뱅킹</a>
               <a href="#">하나카드</a>
               <a href="#">은행소개</a>
               <a href="#">채용안내</a>
             </div>
-            <div class="header_topBox-right">
+            <div class="header_top-rightBox">
               <a href="#">로그인</a>
               <a href="#">인증센터</a>
               <button class="header_language-btn">
                 Language
-                <img src="./img/icon-20-arrow-down-000.png" alt="arrow-down" />
+                <img
+                  class="header_img-arrowDown"
+                  src="./img/icon-20-arrow-down-000.png"
+                  alt="arrow-down"
+                />
+                <div class="header_language-listWrap">
+                  <ul>
+                    <li>한국어<span></span></li>
+                    <li>영어</li>
+                    <li>일본어</li>
+                    <li>중국어</li>
+                    <li>프랑스어</li>
+                  </ul>
+                </div>
               </button>
             </div>
           </div>
         </div>
         <div class="header_navBar">
           <div class="header_navBar-innerBox">
-            <div class="header_logo-wrap">
-              <img src="./img/logo.png" alt="" />
+            <div class="header_logo-wrapBox">
+              <a href="#"><img src="./img/logo.png" alt="" /></a>
             </div>
             <ul class="header_navBar-menu">
               <li><button>조회</button></li>
@@ -57,7 +70,7 @@
         <!-- ==========메인 섹션 1========== -->
         <div class="main_section01">
           <div class="main_section01-innerBox">
-            <div class="main_section01-left">
+            <div class="main_section01-leftBox">
               <div class="main_event-txtBox">
                 <span class="main_event-banner">이벤트</span>
                 <h1>
@@ -80,10 +93,14 @@
             <div class="main_section01-right">
               <div class="main_shortcut-btnGroup">
                 <button class="main_accountCheck-btn">
-                  <span>조회<span class="main_arrowRight-iconBig"></span></span>
+                  <span class="main_accountCheck-txt"
+                    >조회<span class="main_arrowRight-iconBig"></span
+                  ></span>
                 </button>
                 <button class="main_accountTransfer-btn">
-                  <span>이체<span class="main_arrowRight-iconBig"></span></span>
+                  <span class="main_accountTransfer-txt"
+                    >이체<span class="main_arrowRight-iconBig"></span
+                  ></span>
                 </button>
               </div>
               <ul class="main_shortcut-iconGroup">
@@ -243,9 +260,9 @@
               <span class="footer_dot">·</span>
               <a href="#">원큐 금융 상담서비스</a>
             </p>
-            <div class="footer_callBox">
-              <b class="footer_callBox-txt">고객센터</b>
-              <div class="footer_callBox-num">
+            <div class="footer_callCenter-box">
+              <b class="footer_callCenter-txt">고객센터</b>
+              <div class="footer_callCenter-contactNum">
                 1588-1111<span class="footer_slash">/</span>1599-1111
               </div>
             </div>
@@ -262,9 +279,9 @@
             <span class="footer_copyright-txt"
               >Hana Bank. All rights reserved.</span
             >
-            <div class="footer_callBox">
-              <b class="footer_callBox-txt">고객센터(해외)</b>
-              <div class="footer_callBox-num">+82-42-520-2500</div>
+            <div class="footer_callCenter-box">
+              <b class="footer_callCenter-txt">고객센터(해외)</b>
+              <div class="footer_callCenter-contactNum">+82-42-520-2500</div>
             </div>
           </div>
           <div class="footer_bottomBox">
@@ -274,7 +291,14 @@
               <li><button>하나네트워크</button></li>
               <li><button>하나네트워크</button></li>
               <li>
-                <button><a href="#">하나소비자세상</a></button>
+                <button>
+                  <a href="#"
+                    ><img
+                      src="./img/icon-customer.png"
+                      alt=""
+                    />하나소비자세상</a
+                  >
+                </button>
               </li>
             </ul>
           </div>

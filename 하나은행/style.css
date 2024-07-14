@@ -27,7 +27,7 @@ button {
 .header {
   border-bottom: 2px solid #009591;
 }
-.header_topBox-innerBox,
+.header_top-innerBox,
 .header_navBar-innerBox,
 .main_section01-innerBox,
 .main_section02-innerBox,
@@ -36,34 +36,76 @@ button {
   max-width: 1150px;
   margin: 0 auto;
 }
-.header_topBox-innerBox {
+.header_top-innerBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 0;
 }
-.header_topBox a {
+.header_top-box a {
   color: gray;
   font-size: 12px;
 }
-.header_topBox-left > a {
+.header_top a:hover {
+  text-decoration: underline;
+}
+.header_top-leftBox > a {
   margin-right: 5px;
 }
-.header_topBox-right > a {
+.header_top-rightBox > a {
   margin-left: 10px;
 }
-.header_topBox-right > button {
+.header_language-btn {
   margin-left: 10px;
   padding: 0;
   color: gray;
   background: none;
   border: none;
   font-size: 12px;
+  position: relative;
 }
-.header_language-btn > img {
+.header_img-arrowDown {
   width: 12px;
   height: 12px;
 }
+.header_language-listWrap {
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: calc(100%);
+  z-index: 8;
+  transition: height 0.5s;
+}
+.header_language-btn:hover > .header_language-listWrap {
+  height: 210px;
+}
+.header_language-listWrap > ul {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: white;
+}
+.header_language-listWrap li {
+  min-width: max-content;
+  padding: 10px;
+}
+.header_language-listWrap li:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.header_language-listWrap li:first-child > span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  background-color: white;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  z-index: 9;
+}
+
 .header_navBar-innerBox {
   display: flex;
   justify-content: space-between;
@@ -72,13 +114,17 @@ button {
 }
 .header_navBar-menu {
   display: flex;
-  gap: 50px;
+  gap: 70px;
   margin: 20px 0;
 }
 .header_navBar-menu > li > button {
   background: none;
   border: none;
   font-size: 18px;
+}
+.header_navBar-menu > li:hover > button {
+  color: #009591;
+  font-weight: 600;
 }
 .header_chatBot-icon {
   cursor: pointer;
@@ -109,6 +155,7 @@ button {
 =========메인 섹션 1=========
 ============================ */
 
+/* 섹션1왼쪽 */
 .main_section01 {
   background-color: #fafbfb;
 }
@@ -116,7 +163,7 @@ button {
   display: flex;
   gap: 58px;
 }
-.main_section01-left {
+.main_section01-leftBox {
   width: 760px;
   height: 440px;
   background-image: url(./img/football_play_main_slide.png);
@@ -142,8 +189,8 @@ button {
   font-size: 40px;
 }
 .main_event-txtBox > p {
-  color: gray;
   margin: 5px 0;
+  color: gray;
   font-size: 14px;
 }
 .main_learnMore-btn {
@@ -192,6 +239,7 @@ button {
   height: 14px;
   background-position: center;
 }
+/* 섹션1오른쪽 */
 .main_section01-right {
   flex-grow: 1;
 }
@@ -220,8 +268,8 @@ button {
 .main_accountTransfer-btn:hover .main_arrowRight-iconBig {
   display: inline-block;
 }
-.main_accountTransfer-btn > span,
-.main_accountCheck-btn > span {
+.main_accountCheck-txt,
+.main_accountTransfer-txt {
   position: absolute;
   bottom: 15px;
   left: 20px;
@@ -253,6 +301,10 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.main_shortcut-iconGroup > li:hover {
+  font-weight: 600;
 }
 .main_shortcut-iconGroup > li > p {
   margin: 5px 0;
@@ -279,8 +331,8 @@ button {
   text-decoration: underline;
 }
 .main_section02-flex > li h3 {
-  color: black;
   margin: 0 0 7px;
+  color: black;
   font-weight: 500;
 }
 .main_section02-flex > li p {
@@ -300,7 +352,7 @@ button {
 }
 .main_whatsNew-box {
   flex-grow: 1;
-  margin-right: 50px;
+  margin-right: 75px;
 }
 .main_whatsNew-box > h3 {
   position: relative;
@@ -318,6 +370,10 @@ button {
   top: 50%;
   transform: translateY(-50%);
 }
+.main_seeMore-btn:hover,
+.main_whatsNew-box > ul > li > a:hover {
+  text-decoration: underline;
+}
 .main_whatsNew-box > ul > li {
   display: flex;
   justify-content: space-between;
@@ -332,14 +388,19 @@ button {
   border-collapse: collapse;
   border-style: hidden;
   border-radius: 10px;
-  box-shadow: 0 0 0 1px #ddd;
+  overflow: hidden;
+  box-shadow: 0 0 0px 1px #ddd;
 }
 .main_section03_linkTable td {
   padding: 10px;
-  text-align: center;
   border: 1px solid #ddd;
-  border-radius: 10px;
+  text-align: center;
   font-size: 14px;
+  cursor: pointer;
+}
+.main_section03_linkTable td:hover {
+  background-color: #eee;
+  text-decoration: underline;
 }
 .main_section03-iconGroup {
   display: flex;
@@ -350,37 +411,44 @@ button {
 .main_section03-iconGroup > li {
   width: 70px;
   height: 70px;
-  cursor: pointer;
   border-radius: 16px;
+  cursor: pointer;
 }
 .main_section03-iconGroup > li:hover {
   box-shadow: 0 0 1px 0px #009591;
 }
+/* =========================
+============푸터============
+============================ */
+
 .footer {
   border-top: 1px solid #ddd;
+}
+.footer_innerBox {
+  padding: 30px 0;
+}
+.footer_topBox a:hover {
+  text-decoration: underline;
 }
 .footer_topBox,
 .footer_middleBox {
   position: relative;
 }
-.footer_innerBox {
-  padding: 30px 0;
-}
 .footer_link-firstLine,
 .footer_link-secondLine {
   font-size: 13px;
 }
-.footer_callBox {
+.footer_callCenter-box {
   text-align: end;
   position: absolute;
   right: 0;
   bottom: 0;
 }
-.footer_callBox-txt {
+.footer_callCenter-txt {
   color: #009591;
   font-size: 13px;
 }
-.footer_callBox-num {
+.footer_callCenter-contactNum {
   font-size: 24px;
   font-weight: 600;
 }
@@ -402,8 +470,9 @@ button {
   vertical-align: 2px;
 }
 .footer_slash {
+  padding: 0 5px;
   color: #ddd;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .footer_selectBox {
@@ -427,15 +496,18 @@ button {
   right: 20px;
   top: 9px;
 }
-.footer_selectBox > li:not(:last-child) > button {
+.footer_selectBox > li > button {
   display: block;
   width: 100%;
   padding: 10px 0 10px 20px;
-  background: transparent;
+  font-size: 12px;
+  text-align: start;
+}
+.footer_selectBox > li:not(:last-child) > button {
   border: 1px solid #ddd;
   color: #333333;
-  text-align: start;
-  font-size: 12px;
+  background: transparent;
+
   position: relative;
 }
 .footer_selectBox > li:first-child > button {
@@ -446,4 +518,26 @@ button {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+.footer_selectBox > li:last-child > button:after {
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 17px;
+  background: url(./img/icon-20-arrow-right-666.png);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.footer_selectBox > li:last-child > button {
+  background-color: #f3f3f3;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+}
+.footer_selectBox > li:last-child img {
+  vertical-align: sub;
+  padding-right: 10px;
 }

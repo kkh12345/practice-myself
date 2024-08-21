@@ -1,0 +1,279 @@
+/* common */
+li {
+  list-style: none;
+}
+.wrap {
+  width: 100%;
+}
+.inner {
+  max-width: 1350px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+.white_btn {
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1em;
+  font-weight: bold;
+}
+section {
+  color: white;
+}
+.section02 button {
+  color: rgba(103, 158, 21, 0.781);
+}
+.section03 button {
+  color: orange;
+}
+.section04 button {
+  color: red;
+}
+.section05 .white_btn {
+  color: lightseagreen;
+}
+.media_frutti {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 1.5em;
+  color: white;
+  background-color: rgba(42, 129, 129, 0.664);
+}
+
+.section01 {
+  background-image: url(./images/section01_bg.svg);
+  background-repeat: no-repeat;
+  padding-bottom: 100px;
+}
+
+.section01 > .inner > img {
+  position: absolute;
+}
+img.heading_txt {
+  width: 600px;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+img.logo_blue {
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.jam_group {
+  display: flex;
+  justify-content: center;
+  padding-top: 250px;
+  position: relative;
+}
+.jam_group img {
+  max-width: 200px;
+}
+
+.section02 {
+  background-image: url(./images/section02_bg.svg);
+  background-repeat: no-repeat;
+  padding-bottom: 50px;
+  border-radius: 20px 20px 0 0;
+  margin-top: -50px;
+  background-repeat: no-repeat;
+}
+.section02 > .inner,
+.section03 > .inner {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.section02 .desc,
+.section03 .desc,
+.section04_desc {
+  width: 50%;
+}
+.section02 h1,
+.section03 h1,
+.section04 h1 {
+  font-size: 3em;
+}
+.section02 p,
+.section03 p,
+.section04 p,
+.section05 .desc p {
+  margin: 2em 0 3em;
+}
+.sec02_img {
+  width: 50%;
+  order: 1;
+}
+.section03 {
+  background: url(./images/section03_bg.svg), orange;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 12;
+}
+
+.sec03_img {
+  width: 50%;
+}
+.section04 {
+  padding-bottom: 0;
+  background-color: red;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  z-index: 0;
+  margin-bottom: -50px;
+  padding-bottom: 100px;
+}
+.section04 .inner {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.sec04_img {
+  width: 50%;
+}
+.section04 .desc {
+  text-align: center;
+  order: -1;
+}
+.section05 {
+  background-color: lightseagreen;
+}
+.section05 > .inner {
+  padding-top: 200px;
+}
+.section05 .desc {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.section05 .desc img {
+  width: 100%;
+}
+
+.items,
+.news {
+  background-color: white;
+  border-radius: 20px;
+  color: lightseagreen;
+  text-align: center;
+}
+.items {
+  margin-top: 5em;
+  padding: 100px;
+}
+.news {
+  margin-top: 2em;
+  padding: 50px 100px;
+}
+.news_imgWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.news_imgWrap img {
+  width: 45%;
+}
+.items h1,
+.news h1 {
+  margin-bottom: 1.2em;
+  font-size: 3em;
+}
+.items button {
+  min-width: 200px;
+  background-color: lightseagreen;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-size: 1em;
+}
+.items ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.items img {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+.price {
+  margin: 1em 0;
+}
+footer {
+  padding: 100px 0 20px;
+  position: relative;
+}
+.footer_logo {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.footer_function {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.email_wrap {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+input[type="email"] {
+  border: 1px solid white;
+  border-radius: 30px;
+  background-color: transparent;
+  padding: 5px 20px;
+}
+input[type="email"]::placeholder {
+  color: #ddd;
+}
+input[type="email"] + button {
+  background-color: rgba(25, 109, 105, 0.438);
+  color: white;
+  padding: 5px 20px;
+  border-radius: 30px;
+  border: none;
+  margin-left: 5px;
+}
+.function1,
+.function2,
+.function3 {
+  width: 33%;
+}
+
+.copyright {
+  margin-top: 70px;
+}
+.function3 p {
+  margin-top: 30px;
+}
+.card_img {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+}
+.sns {
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+.sns i {
+  margin: 0 10px;
+}

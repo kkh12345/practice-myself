@@ -1,0 +1,130 @@
+@media screen and (max-width: 768px) {
+  .wrap {
+    min-width: 0;
+  }
+  .wrap section {
+    background: var(--header-background);
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  header span:first-child {
+    order: 1;
+  }
+  header span:first-child::before {
+    content: 'Tel.';
+    font-family: initial;
+  }
+  header span:last-child,
+  .logo_blue,
+  .hamburger,
+  .jam_group li:nth-child(3) img {
+    display: none;
+  }
+  img.heading_txt {
+    margin: 0 auto 2em;
+  }
+  img.character {
+    width: 80px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .sec1_inner {
+    width: 100%;
+    padding: 15em 0;
+  }
+  .sec2,
+  .sec4,
+  .sec5 {
+    margin: 0;
+    border-radius: 0;
+  }
+  .sec2_inner,
+  .sec3_inner,
+  .sec4_inner {
+    padding: 12em 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .txt,
+  .img {
+    width: 100%;
+  }
+  .img > img {
+    margin: 2em 0 0;
+    width: 100%;
+  }
+  .sec3 .img {
+    order: 1;
+  }
+  .sec4 .img {
+    margin: 2em auto 0;
+  }
+  .sec5_inner {
+    padding: 7em 0 1em;
+    width: 95%;
+    margin: 0 auto;
+  }
+  .sec5 .character {
+    display: none;
+  }
+  .sec5 .txt {
+    width: 100%;
+  }
+  .shop {
+    display: none;
+  }
+  .news {
+    margin: 0;
+    padding: 5em 0;
+  }
+  .news .img_wrap {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .news .img_wrap img {
+    width: 100%;
+  }
+  .footer_logo {
+    width: 200px;
+    margin: 5em auto;
+  }
+  ul.function {
+    flex-direction: column;
+  }
+  ul.function .func1 {
+    margin-bottom: 7em;
+  }
+  .func2 h2 {
+    width: 50%;
+    margin: 0 auto 3em;
+  }
+  .input_wrap {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  input[type='email'] {
+    padding: 1em;
+  }
+  input[type='button'] {
+    width: 100%;
+    padding: 1em 0;
+  }
+  .sns_icon {
+    margin: 1em 0;
+  }
+  .media_img {
+    display: block;
+    text-align: center;
+    padding: 5em 0;
+  }
+  .media_img > img {
+    display: block;
+    width: 100%;
+    margin-bottom: 10em;
+  }
+}

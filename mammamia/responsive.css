@@ -1,0 +1,147 @@
+@media screen and (max-width: 768px) {
+  .section01,
+  .section02,
+  .section03,
+  .section04,
+  .section05 {
+    background: rgba(42, 129, 129, 0.664);
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+  img.character {
+    width: 100px;
+    left: 0;
+    top: 120px;
+  }
+  .wrap {
+  }
+  .inner {
+    padding: 20px;
+    width: 100%;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  header span:first-child {
+    order: 1;
+  }
+  header span:last-child {
+    display: none;
+  }
+  .logo_blue {
+    display: none;
+  }
+  img.heading_txt {
+    max-width: 90%;
+  }
+  .jam_group {
+    width: 100%;
+    justify-content: center;
+  }
+  .jam_group img {
+    width: 33%;
+  }
+  .jam_group img:nth-child(3) {
+    display: none;
+  }
+  .section02 > .inner,
+  .section03 > .inner {
+    flex-direction: column;
+  }
+  .section02 .desc,
+  .section03 .desc,
+  .section04 .desc,
+  .section05 .desc {
+    width: 100%;
+    text-align: center;
+  }
+  .section04 {
+    padding-bottom: 0;
+  }
+  .section03 .desc {
+    order: -1;
+  }
+  .sec04_img,
+  .sec03_img,
+  .sec02_img {
+    width: 80%;
+  }
+
+  .sec05_char {
+    display: none;
+  }
+  footer {
+    padding-top: 0;
+  }
+  .footer_function {
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+  }
+  .email_wrap {
+    display: block;
+  }
+  input[type="email"] + button {
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+  .function1,
+  .function2,
+  .function3 {
+    width: 100%;
+  }
+  input[type="email"] {
+    max-width: 90%;
+    width: 60%;
+    font-size: 1em;
+    padding: 7px 30px;
+  }
+  .news {
+    padding: 10%;
+  }
+  .news_imgWrap {
+    display: block;
+  }
+  .news_imgWrap img {
+    width: 100%;
+  }
+  .items {
+    display: none;
+  }
+  .footer_function h1 {
+    font-size: 3em;
+  }
+  .footer_logo {
+    margin: 100px auto;
+    width: 40%;
+  }
+  .card_img {
+    width: 50%;
+    margin: 2em auto;
+  }
+  .media_frutti {
+    display: block;
+  }
+  .media_frutti img {
+    display: block;
+    width: 100%;
+  }
+  .media_frutti p {
+    margin: 150px 0 70px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .sns {
+    margin: 1em 0;
+  }
+  .function3 p {
+    margin-top: 0;
+  }
+  .copyright {
+    margin-top: 50px;
+  }
+}
